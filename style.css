@@ -13,17 +13,19 @@ h1 {
     font-family: cormorant-garamond, serif;
     font-weight: 700;
     font-style: normal;
+    color: #7a645a;
 }
 
 p {
     font-family: brandon-grotesque, sans-serif;
     font-weight: 300;
     font-style: normal;
+    color: #7a645a;
 }
 
 a {
     font-family: brandon-grotesque, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
     width: auto;
@@ -46,12 +48,16 @@ img {
 
 
 /************* HEADER *************/
+nav {}
+
 #desktop_menu {
     display: none;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
+    border-bottom: 1px solid #333;
+    background-color: #fafafa;
 }
 
 #desktop_menu img {
@@ -70,7 +76,18 @@ img {
 
 
 
+#mobil_header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
 
+#mobil_header a img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: -116px;
+}
 
 
 
@@ -83,6 +100,10 @@ img {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    position: fixed;
+    z-index: 10;
+    background-color: #fafafa;
+    top: 0;
 }
 
 #mobil_menu .mobil_logo {
@@ -114,14 +135,14 @@ img {
     display: none;
 }
 
-.social_links {
+#mobil_menu .social_links {
     margin-top: 115px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-.social_links img {
+#mobil_menu .social_links img {
     width: 70px;
     height: 70px;
     margin: 0 5px;
@@ -152,6 +173,7 @@ img {
     background-color: #7a645a;
     cursor: pointer;
     padding: 18px;
+    z-index: 100;
 }
 
 .wrapper-menu {
@@ -198,19 +220,356 @@ img {
     transform: rotate(-90deg) translateX(-3px);
 }
 
+/************* BURGERMENU SLUT *************/
 
-/************* BURGERMENU *************/
+
+
+/************* FOOTER *************/
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+footer p {
+    color: #000;
+}
+
+footer img {
+    display: none;
+    width: 80px;
+    height: 80px;
+}
+
+footer .footer_info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000000;
+
+}
+
+footer .social_links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer .social_links img {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin: 0 4px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .col:last-child {
+    margin-top: 15px;
+}
+
+
+/************* FOOTER SLUT *************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************* KONTAKT *************/
+#kontakt #kontakt_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    background-image: url(https://buerholt.dk/wp-content/uploads/2019/08/Vicki-facade-311018-02.jpg);
+    background-position: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#kontakt #kontakt_info {
+    width: 100vw;
+    padding: 40px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+#kontakt #kontakt_info h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+
+#kontakt #kontakt_info a {
+    text-transform: lowercase;
+    font-weight: 300;
+    color: #7a645a;
+}
+
+#kontakt #kontakt_info p {
+    font-size: 1.2rem;
+}
+
+
+#kontakt #kontakt_info .box_logo {
+    background-color: #7a645a;
+    background-image: url(billeder/hvidt_logo.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 52vh;
+    display: none;
+}
+
+
+
+/************* KONTAKT SLUT *************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 @media only screen and (min-width:768px) {
+
+    /************* HEADER *************/
     #desktop_menu {
         display: flex;
-
     }
 
+    #mobil_header {
+        display: none;
+    }
+
+    #mobil_menu {
+        display: none;
+    }
+
+    /************* HEADER SLUT *************/
+
+
+
+    /************* BURGERMENU *************/
     #burgermenu {
         display: none;
     }
 
+    /************* BURGERMENU SLUT *************/
+
+
+
+    /************* FOOTER *************/
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px 20px 20px;
+    }
+
+    footer .footer_info {
+        flex-direction: row;
+    }
+
+    footer .social_links img {
+        margin-bottom: 6px;
+    }
+
+    footer img {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: -10px;
+    }
+
+    footer .col:last-child {
+        margin-top: 0;
+    }
+
+    footer .col {
+        margin: 0 20px;
+    }
+
+    /************* FOOTER SLUT *************/
+
+
+
+    /************* KONTAKT *************/
+    #kontakt .kontakt_grid {
+        display: grid;
+        max-width: 100%;
+        margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 40px;
+    }
+
+    #kontakt #kontakt_info .box_logo {
+        display: block;
+        align-self: center;
+    }
+
+    #kontakt #kontakt_info .box_info {
+        align-self: center;
+        place-self: center;
+    }
+
+    #kontakt #kontakt_info .box_info p {
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    #kontakt #kontakt_info .box_info p:nth-child(2),
+    #kontakt #kontakt_info .box_info p:nth-child(3) {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    #kontakt #kontakt_info h1 {
+        font-size: 1.75rem;
+        margin-top: 0;
+    }
+
+    /************* KONTAKT SLUT *************/
+
+}
+
+@media only screen and (min-width:992px) {
+
+
+
+
+
+
+    /************* KONTAKT *************/
+    #kontakt .kontakt_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+        grid-column-gap: 40px;
+        justify-items: center;
+    }
+
+    #kontakt #kontakt_info .box_info p:last-child {
+        max-width: 60%;
+
+    }
+
+
+    /************* KONTAKT SLUT *************/
+}
+
+
+
+@media only screen and (min-width:1200px) {
+
+
+
+
+
+
+    /************* KONTAKT *************/
+    #kontakt .kontakt_grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+        grid-column-gap: 40px;
+    }
+
+    #kontakt #kontakt_info h1 {
+        font-size: 2.5rem;
+    }
+
+    /************* KONTAKT SLUT *************/
+}
+
+@media only screen and (min-width:1500px) {
+
+
+
+
+
+
+    /************* KONTAKT *************/
+    #kontakt .kontakt_grid {
+        max-width: 1500px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+        grid-column-gap: 40px;
+    }
+
+    /************* KONTAKT SLUT *************/
 }
