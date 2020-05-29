@@ -76,7 +76,6 @@ nav {}
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    border-bottom: 1px solid #333;
     background-color: #fafafa;
 }
 
@@ -510,8 +509,34 @@ footer .col:last-child {
 
 
 
-#smykker img {
+#smykker #alle_smykker img {
     width: 70%;
+}
+
+#smykker #kategorier {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-column-gap: 5vw;
+    grid-row-gap: 1vw;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 40px;
+}
+
+#smykker #kategorier article {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#smykker #kategorier article h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+#smykker #kategorier article a img {
+    width: 100%;
 }
 
 

@@ -74,16 +74,34 @@
     </header>
 
 
+
+
     <section id="smykker">
         <section id="smykker_splash"></section>
+
+
+
+
+        <section id="kategorier">
+            <template id="kategori_template">
+                <article class="kategori_article">
+                    <a href="">
+                        <img>
+                        <h3></h3>
+                    </a>
+                </article>
+            </template>
+
+        </section>
 
         <section id="smykke_info">
 
         </section>
 
+
         <section id="alle_smykker">
-            <template>
-                <article>
+            <template id="smykke_template">
+                <article class="smykke_article">
                     <img>
                     <h3></h3>
                     <p></p>
@@ -143,10 +161,12 @@
         //Vi definerer et endpoint til WP-backenden mht. smykke-siden
         const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
         const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
+        const kategoriEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykkekategori";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let smykkeInfo = [];
         let alleSmykker = [];
+        let kategorier = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -163,6 +183,10 @@
             alleSmykker = await smykkeResponse.json();
             console.log(alleSmykker);
 
+            const kategoriResponse = await fetch(kategoriEndpoint);
+            kategorier = await kategoriResponse.json();
+            console.log(kategorier);
+
             console.log(smykkeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
             visSmykker(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
         }
@@ -174,9 +198,19 @@
             smykkeHeading.textContent += `${smykkeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             smykkeContent.before(smykkeHeading); //Vi indsætter smykke overskriften før den første paragraph
 
+            let kategoriContainer = document.querySelector("#kategorier");
+            let kategoriTemplate = document.querySelector("#kategori_template");
+            kategorier.forEach(kategori => {
+                let kategoriKlon = kategoriTemplate.cloneNode(true).content;
+                kategoriKlon.querySelector("a").href = `${kategori.slug}.html`;
+                kategoriKlon.querySelector("h3").textContent = kategori.kategori_navn;
+                kategoriKlon.querySelector("img").src = kategori.kategori_billede.guid;
+
+                kategoriContainer.appendChild(kategoriKlon);
+            });
 
             let smykkeContainer = document.querySelector("#alle_smykker");
-            let smykkeTemplate = document.querySelector("template");
+            let smykkeTemplate = document.querySelector("#smykke_template");
             alleSmykker.forEach(smykke => {
                 let smykkeklon = smykkeTemplate.cloneNode(true).content;
                 smykkeklon.querySelector("h3").textContent = smykke.navn;
@@ -184,14 +218,6 @@
                 smykkeklon.querySelector("p").textContent = smykke.beskrivelse;
                 smykkeklon.querySelector("p+p").textContent = smykke.pris;
                 smykkeContainer.appendChild(smykkeklon);
-
-
-
-
-
-
-
-
             });
 
         }
