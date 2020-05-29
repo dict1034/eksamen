@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øreringe | Jewelry By Buerholt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jke5vgr.css">
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="desktop_menu">
+                <a href="smykker.html">Smykker</a>
+                <a href="fornyelse.html">Fornyelse</a>
+                <a href="index.html">
+                    <img src="billeder/logo.svg" alt="logo">
+                </a>
+
+                <a href="om-buerholt.html">Om Buerholt</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+
+            <div id="mobil_header">
+                <a href="index.html">
+                    <img src="billeder/logo.svg" alt="logo">
+                </a>
+            </div>
+
+            <div id="mobil_menu">
+                <a href="index.html">
+                    <img src="billeder/logo.svg" alt="logo" class="mobil_logo">
+                </a>
+
+                <div id="smykke_menu_container">
+                    <div id="smykke_menu">
+                        <a href="smykker.html">Smykker</a>
+                        <img src="" alt="" class="smykke_expand">
+                    </div>
+
+                    <div id="dropdown">
+                        <a href="#">Alle</a>
+                        <a href="#">Bubbles</a>
+                        <a href="#">Ringe</a>
+                        <a href="#">Vielsesringe</a>
+                        <a href="#">Øreringe</a>
+                        <a href="#">Armbånd</a>
+                        <a href="#">Halskæder</a>
+                    </div>
+                </div>
+
+                <div id="menu_links">
+                    <a href="fornyelse.html">Fornyelse</a>
+                    <a href="om-buerholt.html">Om Buerholt</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+
+
+                <div class="social_links">
+                    <a href="https://www.facebook.com/JewelryByBuerholt" target="_blank">
+                        <img src="billeder/facebook.svg" alt="Facebook logo">
+                    </a>
+                    <a href="https://www.instagram.com/jewelrybybuerholt/?hl=da" target="_blank">
+                        <img src="billeder/instagram.svg" alt="Instagram logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="oereringe">
+        <section id="oereringe_splash"></section>
+
+        <section id="oereringe_info">
+
+        </section>
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <div id="burgermenu">
+        <div class="wrapper-menu">
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="billeder/brunt_logo.svg" alt="logo">
+
+        <div class="footer_info">
+            <div class="col">
+                <p><strong>Jewelry By Buerholt</strong></p>
+                <p>Holmbladsgade 5</p>
+                <p>2300 København S</p>
+            </div>
+
+            <div class="col">
+                <p>(+45) 21 21 21 09</p>
+                <p>vbuerholt@gmail.com</p>
+                <p>CVR nr: 32500838</p>
+            </div>
+        </div>
+
+        <div class="social_links">
+            <a href="https://www.facebook.com/JewelryByBuerholt" target="_blank">
+                <img src="billeder/facebook.svg" alt="Facebook logo">
+            </a>
+            <a href="https://www.instagram.com/jewelrybybuerholt/?hl=da" target="_blank">
+                <img src="billeder/instagram.svg" alt="Instagram logo">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        //Der opsættes en eventlistener på "DOMContentLoaded", hvorefter funktionen "start" påbegyndes
+        document.addEventListener("DOMContentLoaded", start);
+
+        //Vi definerer et endpoint til WP-backenden mht. øreringe-siden
+        const oereRingeEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/35";
+
+        //Vi definerer en variabel, som skal indeholde alt data fra JSON
+        let oereRingeInfo = [];
+
+        //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
+        function start() {
+            loadData();
+        }
+
+        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i oereringe-variablen
+        async function loadData() {
+            const pageResponse = await fetch(oereRingeEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            oereRingeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "oereringeInfo"-variablen.
+            console.log(oereRingeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+            visOereringe(); //Vi kalder funktionen "visOereringe", som skal indsætte indholdet på siden
+        }
+
+        function visOereringe() {
+            document.querySelector("#oereringe_info").innerHTML += oereRingeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "oereringe_info"
+            let oereRingeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
+            let oereRingeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
+            oereRingeHeading.textContent += `${oereRingeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra oereringe-siden gennem WP-backend
+            oereRingeContent.before(oereRingeHeading); //Vi indsætter smykke overskriften før den første paragraph
+
+        }
+
+    </script>
+    <script src="burgermenu.js"></script>
+</body>
+
+</html>

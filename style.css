@@ -646,7 +646,33 @@ footer .col:last-child {
 
 
 /************* VIELSESRINGE *************/
+#vielsesringe #vielsesringe_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+}
 
+#vielsesringe #vielsesringe_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vielsesringe #vielsesringe_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -687,7 +713,33 @@ footer .col:last-child {
 
 
 /************* ØRERINGE *************/
+#oereringe #oereringe_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+}
 
+#oereringe #oereringe_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#oereringe #oereringe_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -734,7 +786,33 @@ footer .col:last-child {
 
 
 /************* ARMBÅND *************/
+#armbaand #armbaand_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+}
 
+#armbaand #armbaand_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#armbaand #armbaand_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -778,7 +856,33 @@ footer .col:last-child {
 
 
 /************* HALSKÆDER *************/
+#halskaeder #halskaeder_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+}
 
+#halskaeder #halskaeder_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#halskaeder #halskaeder_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -821,8 +925,33 @@ footer .col:last-child {
 
 
 /************* BUBBLES *************/
+#bubbles #bubbles_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+}
 
+#bubbles #bubbles_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#bubbles #bubbles_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -1010,14 +1139,26 @@ footer .col:last-child {
 
 
 
-    /************* SMYKKER *************/
+    /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER *************/
 
-    #smykker #smykke_info {
+    #smykker #smykke_info,
+    #ringe #ringe_info,
+    #vielsesringe #vielsesringe_info,
+    #oereringe #oereringe_info,
+    #armbaand #armbaand_info,
+    #halskaeder #halskaeder_info,
+    #bubbles #bubbles_info {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    #smykker #smykke_info .wp-block-columns {
+    #smykker #smykke_info .wp-block-columns,
+    #ringe #ringe_info .wp-block-columns,
+    #vielsesringe #vielsesringe_info .wp-block-columns,
+    #oereringe #oereringe_info .wp-block-columns,
+    #armbaand #armbaand_info .wp-block-columns,
+    #halskaeder #halskaeder_info .wp-block-columns,
+    #bubbles #bubbles_info .wp-block-columns {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -1025,70 +1166,59 @@ footer .col:last-child {
         width: 100vw;
     }
 
-    #smykker #smykke_info .wp-block-column {
+    #smykker #smykke_info .wp-block-column,
+    #ringe #ringe_info .wp-block-column,
+    #vielsesringe #vielsesringe_info .wp-block-column,
+    #oereringe #oereringe_info .wp-block-column,
+    #armbaand #armbaand_info .wp-block-column,
+    #halskaeder #halskaeder_info .wp-block-column,
+    #bubbles #bubbles_info .wp-block-column {
         width: 50%;
         padding: 20px;
         max-width: 500px;
     }
 
-    #smykker #smykke_info .wp-block-column:first-child {
+    #smykker #smykke_info .wp-block-column:first-child,
+    #ringe #ringe_info .wp-block-column:first-child,
+    #vielsesringe #vielsesringe_info .wp-block-column:first-child,
+    #oereringe #oereringe_info .wp-block-column .wp-block-column:first-child,
+    #armbaand #armbaand_info .wp-block-column .wp-block-column:first-child,
+    #halskaeder #halskaeder_info .wp-block-column:first-child,
+    #bubbles #bubbles_info .wp-block-column:first-child {
         padding-right: 35px;
     }
 
-    #smykker #smykke_info .wp-block-column:last-child {
+    #smykker #smykke_info .wp-block-column:last-child,
+    #ringe #ringe_info .wp-block-column:last-child,
+    #vielsesringe #vielsesringe_info .wp-block-column:last-child,
+    #oereringe #oereringe_info .wp-block-column:last-child,
+    #armbaand #armbaand_info .wp-block-column .wp-block-column:last-child,
+    #halskaeder #halskaeder_info .wp-block-column:last-child,
+    #bubbles #bubbles_info .wp-block-column:last-child {
         padding-left: 35px;
     }
 
-    #smykker #smykke_info .wp-block-column h1 {
+    #smykker #smykke_info .wp-block-column h1,
+    #ringe #ringe_info .wp-block-column h1,
+    #vielsesringe #vielsesringe_info .wp-block-column h1,
+    #oereringe #oereringe_info .wp-block-column h1,
+    #armbaand #armbaand_info .wp-block-column .wp-block-column h1,
+    #halskaeder #halskaeder_info .wp-block-column h1,
+    #bubbles #bubbles_info .wp-block-column h1 {
         margin: 0;
     }
 
-    #smykker #smykke_info .wp-block-column p {
+    #smykker #smykke_info .wp-block-column p,
+    #ringe #ringe_info .wp-block-column p,
+    #vielsesringe #vielsesringe_info .wp-block-column p,
+    #oereringe #oereringe_info .wp-block-column p,
+    #armbaand #armbaand_info .wp-block-column .wp-block-column p,
+    #halskaeder #halskaeder_info .wp-block-column p,
+    #bubbles #bubbles_info .wp-block-column p {
         margin: 5px 0;
     }
 
-    /************* SMYKKER SLUT *************/
-
-
-
-    /************* RINGE *************/
-
-    #ringe #ringe_info {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    #ringe #ringe_info .wp-block-columns {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100vw;
-    }
-
-    #ringe #ringe_info .wp-block-column {
-        width: 50%;
-        padding: 20px;
-        max-width: 500px;
-    }
-
-    #ringe #ringe_info.wp-block-column:first-child {
-        padding-right: 35px;
-    }
-
-    #ringe #ringe_info .wp-block-column:last-child {
-        padding-left: 35px;
-    }
-
-    #ringe #ringe_info .wp-block-column h1 {
-        margin: 0;
-    }
-
-    #ringe #ringe_info .wp-block-column p {
-        margin: 5px 0;
-    }
-
-    /************* RINGE SLUT *************/
+    /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER SLUT *************/
 
 }
 

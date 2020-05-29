@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armbånd | Jewelry By Buerholt</title>
+    <title>Vielsesringe | Jewelry By Buerholt</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/jke5vgr.css">
 
@@ -74,10 +74,10 @@
     </header>
 
 
-    <section id="armbaand">
-        <section id="armbaand_splash"></section>
+    <section id="vielsesringe">
+        <section id="vielsesringe_splash"></section>
 
-        <section id="armbaand_info">
+        <section id="vielsesringe_info">
 
         </section>
 
@@ -130,31 +130,31 @@
         //Der opsættes en eventlistener på "DOMContentLoaded", hvorefter funktionen "start" påbegyndes
         document.addEventListener("DOMContentLoaded", start);
 
-        //Vi definerer et endpoint til WP-backenden mht. armbånd-siden
-        const armbaandEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/52";
+        //Vi definerer et endpoint til WP-backenden mht. vielsesringe-siden
+        const vielsesRingeInfoEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/33";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
-        let armbaandInfo = [];
+        let vielsesRingeInfo = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
             loadData();
         }
 
-        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i armbaandInfo-variablen
+        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i vielsesRingeInfo-variablen
         async function loadData() {
-            const pageResponse = await fetch(armbaandEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
-            armbaandInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "armbaandInfo"-variablen.
-            console.log(armbaandInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
-            visArmbaand(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
+            const pageResponse = await fetch(vielsesRingeInfoEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            vielsesRingeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "vielsesRingeInfo"-variablen.
+            console.log(vielsesRingeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+            visVielsesRinge(); //Vi kalder funktionen "visVielsesRinge", som skal indsætte indholdet på siden
         }
 
-        function visArmbaand() {
-            document.querySelector("#armbaand_info").innerHTML += armbaandInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "armbaand_info"
-            let armbaandHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
-            let armbaandContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
-            armbaandHeading.textContent += `${armbaandInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra armbånd-siden gennem WP-backend
-            armbaandContent.before(armbaandHeading); //Vi indsætter armbånd overskriften før den første paragraph
+        function visVielsesRinge() {
+            document.querySelector("#vielsesringe_info").innerHTML += vielsesRingeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "vielsesringe_info"
+            let vielsesRingeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
+            let vielsesRingeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
+            vielsesRingeHeading.textContent += `${vielsesRingeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra vielsesringe-siden gennem WP-backend
+            vielsesRingeContent.before(vielsesRingeHeading); //Vi indsætter ringe overskriften før den første paragraph
 
         }
 
