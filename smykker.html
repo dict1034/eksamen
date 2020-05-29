@@ -158,12 +158,12 @@
         //Der opsættes en eventlistener på "DOMContentLoaded", hvorefter funktionen "start" påbegyndes
         document.addEventListener("DOMContentLoaded", start);
 
-        //Vi definerer et endpoint til WP-backenden mht. smykke-siden
+        //Vi definerer endpoints til WP-backenden mht. smykke-siden, alle smykkerne og smykkekategorier
         const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
         const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
         const kategoriEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykkekategori";
 
-        //Vi definerer en variabel, som skal indeholde alt data fra JSON
+        //Vi definerer variabler, som skal indeholde alt data fra JSON
         let smykkeInfo = [];
         let alleSmykker = [];
         let kategorier = [];
@@ -173,21 +173,21 @@
             loadData();
         }
 
-        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i smykke-variablen
+        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra de forskellige endpoints gemmes i variablerne
         async function loadData() {
-            const pageResponse = await fetch(smykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            const pageResponse = await fetch(smykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra "smykkerEndpoint" endpointet. Først når dataen er fetched, kører programmet videre
             smykkeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
-
-
-            const smykkeResponse = await fetch(alleSmykkerEndpoint);
-            alleSmykker = await smykkeResponse.json();
-            console.log(alleSmykker);
-
-            const kategoriResponse = await fetch(kategoriEndpoint);
-            kategorier = await kategoriResponse.json();
-            console.log(kategorier);
-
             console.log(smykkeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+
+            const smykkeResponse = await fetch(alleSmykkerEndpoint); //Der laves en konstant "smykkeResponse", som fanger alt data fra "alleSmykkerEndpoint". Først når dataen er fetched, kører programmet videre
+            alleSmykker = await smykkeResponse.json(); //Dataen som blev fetched gemmes i "alleSmykker"-variablen.
+            console.log(alleSmykker); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+            const kategoriResponse = await fetch(kategoriEndpoint); //Der laves en konstant "kategoriResponse", som fanger alt data fra "kategoriEndpoint". Først når dataen er fetched, kører programmet videre
+            kategorier = await kategoriResponse.json(); //Dataen som blev fetched gemmes i "kategorier"-variablen.
+            console.log(kategorier); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
             visSmykker(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
         }
 
@@ -198,26 +198,25 @@
             smykkeHeading.textContent += `${smykkeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             smykkeContent.before(smykkeHeading); //Vi indsætter smykke overskriften før den første paragraph
 
-            let kategoriContainer = document.querySelector("#kategorier");
-            let kategoriTemplate = document.querySelector("#kategori_template");
-            kategorier.forEach(kategori => {
-                let kategoriKlon = kategoriTemplate.cloneNode(true).content;
-                kategoriKlon.querySelector("a").href = `${kategori.slug}.html`;
-                kategoriKlon.querySelector("h3").textContent = kategori.kategori_navn;
-                kategoriKlon.querySelector("img").src = kategori.kategori_billede.guid;
-
-                kategoriContainer.appendChild(kategoriKlon);
+            let kategoriContainer = document.querySelector("#kategorier"); //Vi definerer en container, der skal indeholde alle de klikbare kategorier
+            let kategoriTemplate = document.querySelector("#kategori_template"); //Dernæst definerer vi en template, som kategorierne tager udgangspunkt i
+            kategorier.forEach(kategori => { //For hver kategori, som blev læst fra WP-backenden skal følgende ske:
+                let kategoriKlon = kategoriTemplate.cloneNode(true).content; //Hver kategori tildeles en skabelon / klon
+                kategoriKlon.querySelector("a").href = `${kategori.slug}.html`; //a-taggets href sættes lig sluggen på kategorien
+                kategoriKlon.querySelector("h3").textContent = kategori.kategori_navn; //h3-taggets tekst sættes lig kategorinavnet
+                kategoriKlon.querySelector("img").src = kategori.kategori_billede.guid; //img-taggets source sættes lig kategoribilledet
+                kategoriContainer.appendChild(kategoriKlon); //Alle de enkelte kategorier indsættes i kategori containeren
             });
 
-            let smykkeContainer = document.querySelector("#alle_smykker");
-            let smykkeTemplate = document.querySelector("#smykke_template");
-            alleSmykker.forEach(smykke => {
-                let smykkeklon = smykkeTemplate.cloneNode(true).content;
-                smykkeklon.querySelector("h3").textContent = smykke.navn;
-                smykkeklon.querySelector("img").src = smykke.billede.guid;
-                smykkeklon.querySelector("p").textContent = smykke.beskrivelse;
-                smykkeklon.querySelector("p+p").textContent = smykke.pris;
-                smykkeContainer.appendChild(smykkeklon);
+            let smykkeContainer = document.querySelector("#alle_smykker"); //Vi definerer en container, der skal indeholde alle smykkerne
+            let smykkeTemplate = document.querySelector("#smykke_template"); //Dernæst definerer vi en template, som smykkerne tager udgangspunkt i
+            alleSmykker.forEach(smykke => { //For hvert smykke, som blev læst fra WP-backenden skal følgende ske:
+                let smykkeklon = smykkeTemplate.cloneNode(true).content; //Hvert smykke tildeles en skabelon / klon
+                smykkeklon.querySelector("h3").textContent = smykke.navn; //h3-taggets tekst sættes lig smykkets navn
+                smykkeklon.querySelector("img").src = smykke.billede.guid; //img-taggets source sættes lig smykkebilledet
+                smykkeklon.querySelector("p").textContent = smykke.beskrivelse; //p-taggets tekst sættes lig smykkets beskrivelse
+                smykkeklon.querySelector("p+p").textContent = smykke.pris; //p-taggets tekst sættes lig smykkets beskrivelse
+                smykkeContainer.appendChild(smykkeklon); //Alle de enkelte smykker indsættes i kategori containeren
             });
 
         }

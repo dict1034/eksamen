@@ -607,6 +607,13 @@ footer .col:last-child {
 #fornyelse .wp-block-columns {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 40px;
+}
+
+#fornyelse .wp-block-columns:first-child {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 0;
 }
 
 #fornyelse .wp-block-columns:nth-child(2) {
@@ -626,8 +633,10 @@ footer .col:last-child {
     font-size: 3rem;
     text-transform: uppercase;
     margin: 0;
-    margin-top: 40px;
-    color:
+}
+
+#fornyelse .journey {
+    display: none;
 }
 
 
@@ -1244,6 +1253,155 @@ footer .col:last-child {
 
 
 
+    /************* FORNYELSE *************/
+    #fornyelse #fornyelse_info {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 30px;
+        margin-top: 0;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column {
+        /*        width: 50%;*/
+        /*        padding: 20px;*/
+
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column img {
+        /*        width: 80%;*/
+        /*        padding: 20px;*/
+        align-self: center;
+        justify-self: center;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column p {
+        width: 100%;
+        /*        padding: 20px;*/
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column:nth-child(odd) {
+        padding-right: 15px;
+        justify-self: flex-start;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column:nth-child(even) {
+        padding-left: 15px;
+        justify-self: flex-end;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column h1 {
+        margin: 0;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column p {
+        margin: 5px 0;
+    }
+
+    /*
+    #fornyelse .journey {
+        display: flex;
+        width: 100%;
+        background-color: #efa444;
+        height: 20px;
+        position: relative;
+    }
+
+    #fornyelse .journey:first-child,
+    #fornyelse .journey:nth-child(5) {
+        display: flex;
+        width: 100%;
+        background-color: #1b59ce;
+        height: 200px;
+        position: relative;
+    }*/
+
+    /************* FORNYELSE SLUT *************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /************* OM BUERHOLT *************/
+    #om #om_info {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #om #om_info .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 30px;
+        margin-top: 0;
+    }
+
+    #om #om_info .wp-block-column {
+        /*        width: 50%;*/
+        /*        padding: 20px;*/
+
+    }
+
+    #om #om_info .wp-block-column img {
+        /*        width: 80%;*/
+        /*        padding: 20px;*/
+        align-self: center;
+        justify-self: center;
+    }
+
+    #om #om_info .wp-block-column p {
+        width: 100%;
+        /*        padding: 20px;*/
+    }
+
+    #om #om_info .wp-block-column:nth-child(odd) {
+        padding-right: 15px;
+        justify-self: flex-start;
+    }
+
+    #om #om_info .wp-block-column:nth-child(even) {
+        padding-left: 15px;
+        justify-self: flex-end;
+    }
+
+    #om #om_info .wp-block-column h1 {
+        margin: 0;
+    }
+
+    #om #om_info .wp-block-column p {
+        margin: 5px 0;
+    }
+
+
+    /************* OM BUERHOLT SLUT *************/
+
+
+
+
+
+
 
 
 
@@ -1258,7 +1416,7 @@ footer .col:last-child {
     #halskaeder #halskaeder_info,
     #bubbles #bubbles_info {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     #smykker #smykke_info .wp-block-columns,
@@ -1272,7 +1430,6 @@ footer .col:last-child {
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        width: 100vw;
     }
 
     #smykker #smykke_info .wp-block-column,
@@ -1339,6 +1496,34 @@ footer .col:last-child {
 @media only screen and (min-width:992px) {
 
 
+    /************* FORNYELSE *************/
+
+    #fornyelse #fornyelse_info .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    /************* FORNYELSE SLUT *************/
+
+
+
+
+
+
+
+    /************* OM BUERHOLT *************/
+    #om #om_info {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /************* OM BUERHOLT SLUT *************/
 
 
 
@@ -1381,6 +1566,43 @@ footer .col:last-child {
     }
 
     /************* KONTAKT SLUT *************/
+
+
+
+
+
+    /************* FORNYELSE *************/
+
+    #fornyelse #fornyelse_info {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+
+    #fornyelse #fornyelse_info .wp-block-column p {
+        width: 80%;
+        /*        padding: 20px;*/
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column:nth-child(odd) {
+        padding-right: 35px;
+        justify-self: flex-start;
+    }
+
+    #fornyelse #fornyelse_info .wp-block-column:nth-child(even) {
+        padding-left: 35px;
+        justify-self: flex-end;
+    }
+
+    /************* FORNYELSE SLUT *************/
+
+
+
+
+
 }
 
 @media only screen and (min-width:1500px) {
