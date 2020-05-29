@@ -16,6 +16,13 @@ h1 {
     color: #7a645a;
 }
 
+h2 {
+    color: #7a645a;
+    font-family: cormorant-garamond, serif;
+    font-weight: 700;
+
+}
+
 p {
     font-family: brandon-grotesque, sans-serif;
     font-weight: 300;
@@ -458,8 +465,6 @@ footer .col:last-child {
 
 /************* SMYKKER SLUT *************/
 
-
-
 /************* FORNYELSE *************/
 
 
@@ -484,11 +489,31 @@ footer .col:last-child {
     align-items: center;
 }
 
+#fornyelse .wp-block-columns {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#fornyelse .wp-block-columns:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+#fornyelse #fornyelse_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
-
-
-
+#fornyelse #fornyelse_info h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+    color:
+}
 
 
 
