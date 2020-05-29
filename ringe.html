@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smykker | Jewelry By Buerholt</title>
+    <title>Ringe | Jewelry By Buerholt</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/jke5vgr.css">
 
@@ -74,10 +74,10 @@
     </header>
 
 
-    <section id="smykker">
-        <section id="smykker_splash"></section>
+    <section id="ringe">
+        <section id="ringe_splash"></section>
 
-        <section id="smykke_info">
+        <section id="ringe_info">
 
         </section>
 
@@ -130,31 +130,31 @@
         //Der opsættes en eventlistener på "DOMContentLoaded", hvorefter funktionen "start" påbegyndes
         document.addEventListener("DOMContentLoaded", start);
 
-        //Vi definerer et endpoint til WP-backenden mht. smykke-siden
-        const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
+        //Vi definerer et endpoint til WP-backenden mht. ringe-siden
+        const ringeInfoEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
-        let smykkeInfo = [];
+        let ringeInfo = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
             loadData();
         }
 
-        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i smykke-variablen
+        //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i ringeInfo-variablen
         async function loadData() {
-            const pageResponse = await fetch(smykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
-            smykkeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
-            console.log(smykkeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
-            visSmykker(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
+            const pageResponse = await fetch(ringeInfoEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            ringeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "ringeInfo"-variablen.
+            console.log(ringeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+            visRinge(); //Vi kalder funktionen "visRinge", som skal indsætte indholdet på siden
         }
 
-        function visSmykker() {
-            document.querySelector("#smykke_info").innerHTML += smykkeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
-            let smykkeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
-            let smykkeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
-            smykkeHeading.textContent += `${smykkeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
-            smykkeContent.before(smykkeHeading); //Vi indsætter smykke overskriften før den første paragraph
+        function visRinge() {
+            document.querySelector("#ringe_info").innerHTML += ringeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
+            let ringeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
+            let ringeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
+            ringeHeading.textContent += `${ringeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra ringe-siden gennem WP-backend
+            ringeContent.before(ringeHeading); //Vi indsætter ringe overskriften før den første paragraph
 
         }
 
