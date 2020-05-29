@@ -81,6 +81,16 @@
 
         </section>
 
+        <section id="alle_smykker">
+            <template>
+                <article>
+                    <img>
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                </article>
+            </template>
+        </section>
     </section>
 
 
@@ -132,9 +142,11 @@
 
         //Vi definerer et endpoint til WP-backenden mht. smykke-siden
         const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
+        const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let smykkeInfo = [];
+        let alleSmykker = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -145,6 +157,12 @@
         async function loadData() {
             const pageResponse = await fetch(smykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
             smykkeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
+
+
+            const smykkeResponse = await fetch(alleSmykkerEndpoint);
+            alleSmykker = await smykkeResponse.json();
+            console.log(alleSmykker);
+
             console.log(smykkeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
             visSmykker(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
         }
@@ -155,6 +173,26 @@
             let smykkeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             smykkeHeading.textContent += `${smykkeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             smykkeContent.before(smykkeHeading); //Vi indsætter smykke overskriften før den første paragraph
+
+
+            let smykkeContainer = document.querySelector("#alle_smykker");
+            let smykkeTemplate = document.querySelector("template");
+            alleSmykker.forEach(smykke => {
+                let smykkeklon = smykkeTemplate.cloneNode(true).content;
+                smykkeklon.querySelector("h3").textContent = smykke.navn;
+                smykkeklon.querySelector("img").src = smykke.billede.guid;
+                smykkeklon.querySelector("p").textContent = smykke.beskrivelse;
+                smykkeklon.querySelector("p+p").textContent = smykke.pris;
+                smykkeContainer.appendChild(smykkeklon);
+
+
+
+
+
+
+
+
+            });
 
         }
 
