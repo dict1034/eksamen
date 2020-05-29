@@ -131,7 +131,7 @@
         const fornyelseEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/17";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
-        let smykkeInfo = [];
+        let fornyelseInfo = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -140,18 +140,18 @@
 
         //Der laves en async funktion, da vi ønsker at vente på, at indeholdet fra endpointet gemmes i smykke-variablen
         async function loadData() {
-            const pageResponse = await fetch(smykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
-            smykkeInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
-            console.log(smykkeInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
-            visSmykker(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
+            const pageResponse = await fetch(fornyelseEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            fornyelseInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
+            console.log(fornyelseInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+            visFornyelse(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
         }
 
-        function visSmykker() {
-            document.querySelector("#smykke_info").innerHTML += smykkeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
-            let smykkeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
-            let smykkeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
-            smykkeHeading.textContent += `${smykkeInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
-            smykkeContent.before(smykkeHeading); //Vi indsætter smykke overskriften før den første paragraph
+        function visFornyelse() {
+            document.querySelector("fornyelse_info").innerHTML += smykkeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
+            let fornyelseHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
+            let fornyelseContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
+            smykkeHeading.textContent += `${fornyelseInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
+            fornyelseContent.before(fornyelseHeading); //Vi indsætter smykke overskriften før den første paragraph
 
         }
     </script>
