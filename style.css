@@ -87,6 +87,12 @@ nav {}
 
 #desktop_menu a {
     padding: 5px 0;
+    transition: transform .3s;
+}
+
+#desktop_menu a:hover {
+    transform: scale(1.04);
+    font-weight: 700;
 }
 
 
@@ -107,6 +113,16 @@ nav {}
     height: 120px;
     margin-bottom: -116px;
 }
+
+#mobil_header a {
+    transition: transform .3s;
+}
+
+#mobil_header a:hover {
+    transform: scale(1.02);
+}
+
+
 
 
 
@@ -134,24 +150,19 @@ nav {}
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
 }
 
 #mobil_menu a {
     margin: 20px 0;
     font-size: 2rem;
+    transition: transform .3s;
+    max-width: 60%;
 }
 
-#mobil_menu #smykke_menu {
-    margin: 60px 0 20px 0;
-}
-
-#smykke_menu_container {
-    width: 100%;
-}
-
-
-#dropdown {
-    display: none;
+#mobil_menu a:hover {
+    transform: scale(1.04);
+    font-weight: 700;
 }
 
 #mobil_menu .social_links {
@@ -159,6 +170,14 @@ nav {}
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+}
+
+#mobil_menu .social_links a {
+    transition: transform .3s;
+}
+
+#mobil_menu .social_links a:hover {
+    transform: scale(1.04);
 }
 
 #mobil_menu .social_links img {
@@ -287,6 +306,14 @@ footer .social_links img {
     height: 60px;
     margin: 0 4px;
     margin-top: 20px;
+}
+
+footer .social_links a {
+    transition: transform .3s;
+}
+
+footer .social_links a:hover {
+    transform: scale(1.06);
 }
 
 footer p {
@@ -463,7 +490,7 @@ footer .col:last-child {
 
 #smykker #smykke_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 40px 40px 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,7 +511,8 @@ footer .col:last-child {
     grid-row-gap: 1vw;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 40px;
+    padding: 0 40px 40px 40px;
+    justify-items: end;
 }
 
 
@@ -528,6 +556,11 @@ footer .col:last-child {
     flex-direction: column;
     cursor: pointer;
     place-self: center;
+    transition: transform .3s, color .3s;
+}
+
+#smykker #kategorier article:hover {
+    transform: scale(1.04);
 }
 
 #smykker #kategorier article h3 {
@@ -1141,6 +1174,37 @@ footer .col:last-child {
 
 
 
+@media only screen and (min-width:500px) {
+    #smykker #alle_smykker {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 2vw;
+        grid-row-gap: 5vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 40px 40px 40px;
+        justify-items: end;
+    }
+
+
+    #smykker #alle_smykker article {
+        /*        border: 1px solid #333;*/
+        padding: 0 10% 0 10%;
+    }
+
+    #smykker #alle_smykker article p,
+    #smykker #alle_smykker article h3 {
+        max-width: 100%;
+        padding: 0 5%;
+    }
+
+    #smykker #alle_smykker article img {
+        width: 100%;
+    }
+
+
+    /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER SLUT *************/
+}
 
 
 
@@ -1150,6 +1214,59 @@ footer .col:last-child {
 
 
 
+@media only screen and (min-width:600px) {
+
+
+
+    /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER *************/
+    #smykker #alle_smykker {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-column-gap: 2vw;
+        grid-row-gap: 5vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 40px 40px 40px;
+        justify-items: end;
+    }
+
+    #smykker #alle_smykker article p,
+    #smykker #alle_smykker article h3 {
+        max-width: 100%;
+        padding: 0 5%;
+    }
+
+
+    #smykker #alle_smykker article:nth-child(2n+2) {
+        /*        border: 1px solid #333;*/
+        padding: 0 20% 0 0;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+2) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+2) img {
+        width: 100%;
+    }
+
+
+    #smykker #alle_smykker article:nth-child(2n+3) {
+        /*        border: 1px solid #bc1818;*/
+        padding: 0 0 0 20%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+3) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+3) img {
+        width: 100%;
+    }
+
+
+    /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER SLUT *************/
+}
 
 
 
@@ -1496,7 +1613,11 @@ footer .col:last-child {
 
 
     #smykker #alle_smykker {
-        padding: 0 0 40px 0;
+        padding: 0 40px 40px 40px;
+    }
+
+    #smykker #alle_smykker article {
+        justify-self: stretch;
     }
 
     #smykker #kategorier {
@@ -1513,6 +1634,51 @@ footer .col:last-child {
     #smykker #kategorier article h3 {
         font-size: 1rem;
     }
+
+    #smykker #smykke_info {
+        padding: 40px;
+    }
+
+    #smykker #alle_smykker {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 2vw;
+        grid-row-gap: 5vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 40px 40px 40px;
+        justify-items: end;
+    }
+
+
+
+    #smykker #alle_smykker article:nth-child(2n+2) {
+        /*        border: 1px solid #333;*/
+        padding: 0 20% 0 0;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+2) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+2) img {
+        width: 100%;
+    }
+
+
+    #smykker #alle_smykker article:nth-child(2n+3) {
+        /*        border: 1px solid #bc1818;*/
+        padding: 0 0 0 20%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+3) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(2n+3) img {
+        width: 100%;
+    }
+
 
     /************* SMYKKER, RINGE, VIELSESRINGE, ØRERINGE, ARMBÅND, HALSKÆDER SLUT *************/
 
@@ -1589,6 +1755,57 @@ footer .col:last-child {
         font-size: 1.25rem;
     }
 
+    #smykker #alle_smykker {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-column-gap: 5vw;
+        grid-row-gap: 1vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 40px 40px 40px;
+        justify-items: end;
+    }
+
+
+
+    #smykker #alle_smykker article:nth-child(3n+4) {
+        /*        border: 1px solid #333;*/
+        padding: 0 0 0 20%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+4) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+4) img {
+        width: 100%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+3) {
+        /*        border: 1px solid #333;*/
+        padding: 0 10% 0 10%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+3) p {
+        max-width: 100%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+3) img {
+        width: 100%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+2) {
+        padding: 0 20% 0 0;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+2) p {
+        max-width: 90%;
+    }
+
+    #smykker #alle_smykker article:nth-child(3n+2) img {
+        width: 100%;
+    }
+
     /************* SMYKKER SLUT *************/
 }
 
@@ -1653,6 +1870,21 @@ footer .col:last-child {
     #smykker #kategorier {
         grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
         grid-row-gap: 1vh;
+    }
+
+    #smykker #alle_smykker {
+        padding: 0 0 40px 0;
+    }
+
+    #smykker #alle_smykker {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 5vw;
+        grid-row-gap: 1vw;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 40px 40px 40px;
+        justify-items: end;
     }
 
     /************* SMYKKER SLUT *************/
