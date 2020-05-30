@@ -725,16 +725,88 @@ footer .col:last-child {
 }
 
 #om {
-    z-index: -1;
+    /*    z-index: -1;*/
     position: relative;
     padding-top: 7vh;
 }
 
 #om #om_info {
-    padding: 40px 40px 80px 40px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#om #insta_gallery {
+    width: 100vw;
+    height: 60vh;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*    padding-bottom: 40px;*/
+
+}
+
+#om #insta_gallery #insta_grid_container {
+    display: grid;
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+        "post1 post2 post3"
+        "post4 post5 post6"
+        "post7 post5 post8";
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding-bottom: 40px;
+    justify-content: stretch;
+}
+
+.insta_post {
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+
+.insta_post:hover {
+    transform: scale(1.02);
+}
+
+.post1 {
+    grid-area: post1;
+}
+
+.post2 {
+    grid-area: post2;
+}
+
+.post3 {
+    grid-area: post3;
+}
+
+.post4 {
+    grid-area: post4;
+}
+
+.post5 {
+    grid-area: post5;
+}
+
+.post6 {
+    grid-area: post6;
+}
+
+.post7 {
+    grid-area: post7;
+}
+
+.post8 {
+    grid-area: post8;
 }
 
 
@@ -1526,6 +1598,10 @@ footer .col:last-child {
         margin: 5px 0;
     }
 
+    #om #insta_gallery {
+        height: 100vh;
+    }
+
 
     /************* OM BUERHOLT SLUT *************/
 
@@ -1717,6 +1793,18 @@ footer .col:last-child {
         flex-wrap: wrap;
         padding-left: 10%;
         padding-right: 10%;
+    }
+
+    #om #insta_gallery {
+        height: 140vh;
+    }
+
+    #om #insta_gallery #insta_grid_container {
+        padding: 0 7%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        grid-column-gap: 2vw;
+        grid-row-gap: 2vw;
     }
 
     /************* OM BUERHOLT SLUT *************/

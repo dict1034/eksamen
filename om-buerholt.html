@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smykker | Jewelry By Buerholt</title>
+    <title>Om Buerholt | Jewelry By Buerholt</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/jke5vgr.css">
 
@@ -60,7 +60,16 @@
 
     <section id="om">
         <section id="om_info">
+        </section>
 
+
+        <section id="insta_gallery">
+            <container id="insta_grid_container">
+                <template id="insta_template">
+                    <a href="" target="_blank" class="insta_post">
+                    </a>
+                </template>
+            </container>
         </section>
 
     </section>
@@ -115,8 +124,11 @@
         //Vi definerer et endpoint til WP-backenden mht. smykke-siden
         const omEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/15";
 
+        const instaEndpoint = "https://www.instagram.com/jewelrybybuerholt/?__a=1";
+
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let omInfo = [];
+        let instaInfo = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -128,6 +140,13 @@
             const pageResponse = await fetch(omEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
             omInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
             console.log(omInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+
+            const instaResponse = await fetch(instaEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            instaInfo = await instaResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
+            console.log(instaInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+
             visOm(); //Vi kalder funktionen "visSmykke", som skal indsætte indholdet på siden
         }
 
@@ -138,6 +157,25 @@
             omHeading.textContent += `${omInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             omContent.before(omHeading); //Vi indsætter smykke overskriften før den første paragraph
 
+            visInsta();
+        }
+
+        function visInsta() {
+            let instaPostCounter = 0;
+            let instaContainer = document.querySelector("#insta_grid_container");
+            let instaTemplate = document.querySelector("#insta_template");
+            let instaPics = instaInfo.graphql.user.edge_owner_to_timeline_media.edges.slice(0, 8);
+
+            instaPics.forEach(pic => {
+                instaPostCounter++;
+                let instaKlon = instaTemplate.cloneNode(true).content;
+                console.log(pic.node.display_url);
+                instaKlon.querySelector("a").href = "https://www.instagram.com/jewelrybybuerholt";
+                instaKlon.querySelector("a").classList.add(`post${instaPostCounter}`);
+                instaKlon.querySelector("a").style.backgroundImage = `url(${pic.node.display_url})`;
+                instaContainer.appendChild(instaKlon);
+                console.log(instaKlon);
+            });
         }
 
     </script>
