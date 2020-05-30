@@ -1,6 +1,6 @@
 let click = 0;
 
-document.querySelector('.wrapper-menu').addEventListener('click', function () {
+document.querySelector('#burgermenu').addEventListener('click', function () {
     document.querySelector('.wrapper-menu').classList.toggle('open');
     click++;
 
