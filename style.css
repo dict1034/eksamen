@@ -287,6 +287,32 @@ nav {}
     transform: rotate(-90deg) translateX(-3px);
 }
 
+
+.vis_menu {
+    animation-name: vis_menu_kf;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.vis_menu_punkter {
+    animation-name: vis_menu_punkter_kf;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+
+.fjern_menu {
+    animation-name: fjern_menu_kf;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
 /************* BURGERMENU SLUT *************/
 
 
@@ -2035,4 +2061,43 @@ footer .col:last-child {
     }
 
     /************* SMYKKER SLUT *************/
+}
+
+
+
+@keyframes vis_menu_kf {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: flex;
+    }
+}
+
+
+@keyframes fjern_menu_kf {
+    0% {
+        opacity: 1;
+        display: flex;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes vis_menu_punkter_kf {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

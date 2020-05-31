@@ -14,8 +14,14 @@ function checkWindowSize() {
     if (closeMenuOnBigScreen.matches) {
         if (click == 1) {
             document.querySelector("#mobil_menu").style.display = "flex";
+            document.querySelector("#mobil_menu").classList.remove("fjern_menu");
+            document.querySelector("#mobil_menu").classList.add("vis_menu");
+            document.querySelector("#menu_links").classList.add("vis_menu_punkter");
         } else if (click == 2) {
-            document.querySelector("#mobil_menu").style.display = "none";
+            //document.querySelector("#mobil_menu").style.display = "none";
+            document.querySelector("#mobil_menu").classList.remove("vis_menu");
+            document.querySelector("#menu_links").classList.remove("vis_menu_punkter");
+            document.querySelector("#mobil_menu").classList.add("fjern_menu");
             click = 0;
         }
     } else {
