@@ -143,7 +143,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer endpoints til WP-backenden mht. smykke-siden, alle smykkerne og smykkekategorier
-        const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8";
+        const smykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/8?_embed";
         const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
         const kategoriEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykkekategori";
 
@@ -176,6 +176,10 @@
         }
 
         function visSmykker() {
+            let splashImage = smykkeInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#smykker_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
             document.querySelector("#smykke_info").innerHTML += smykkeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
             let smykkeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let smykkeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend

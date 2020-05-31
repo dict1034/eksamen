@@ -115,7 +115,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer et endpoint til WP-backenden mht. halskæde-siden
-        const halskaederEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/39";
+        const halskaederEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/39?_embed";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let halskaederInfo = [];
@@ -134,6 +134,11 @@
         }
 
         function visHalskaeder() {
+            let splashImage = halskaederInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#halskaeder_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
             document.querySelector("#halskaeder_info").innerHTML += halskaederInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "halskaeder_info"
             let halskaederHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let halskaederContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend

@@ -115,7 +115,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer et endpoint til WP-backenden mht. vielsesringe-siden
-        const vielsesRingeInfoEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/33";
+        const vielsesRingeInfoEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/33?_embed";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let vielsesRingeInfo = [];
@@ -134,6 +134,11 @@
         }
 
         function visVielsesRinge() {
+            let splashImage = vielsesRingeInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#vielsesringe_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
             document.querySelector("#vielsesringe_info").innerHTML += vielsesRingeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "vielsesringe_info"
             let vielsesRingeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let vielsesRingeContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend

@@ -122,7 +122,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer et endpoint til WP-backenden mht. kontakt-siden
-        const kontaktEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/13";
+        const kontaktEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/13?_embed";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let kontakt = [];
@@ -141,6 +141,13 @@
         }
 
         function visKontakt() {
+            let splashImage = kontakt._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#kontakt_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
+
+
             document.querySelector(".box_info").innerHTML += kontakt.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med klassenavn "box_info"
         }
 

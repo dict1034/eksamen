@@ -109,7 +109,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer et endpoint til WP-backenden mht. smykke-siden
-        const fornyelseEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/17";
+        const fornyelseEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/17?_embed";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let fornyelseInfo = [];
@@ -128,19 +128,17 @@
         }
 
         function visFornyelse() {
+            let splashImage = fornyelseInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#fornyelse_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
             document.querySelector("#fornyelse_info").innerHTML += fornyelseInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
             let fornyelseHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let fornyelseContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             fornyelseHeading.textContent += `${fornyelseInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             fornyelseContent.before(fornyelseHeading); //Vi indsætter smykke overskriften før den første paragraph
 
-
-
-
-
-
             let fornyelseAfsnit = document.querySelectorAll(".wp-block-columns"); //Der defineres en variabel, der indeholder alle kolonne-containere
-
             fornyelseAfsnit.forEach(afsnit => { //For hver kolonne-container skal følgende ske:
                 let journey = document.createElement('div'); //Vi definerer en variabel som er lig et nyt DOM-element "div"
                 journey.classList.add("journey"); //Vi giver den klassen "journey"

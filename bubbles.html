@@ -115,7 +115,7 @@
         document.addEventListener("DOMContentLoaded", start);
 
         //Vi definerer et endpoint til WP-backenden mht. Bubbles-siden
-        const bubblesEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/47";
+        const bubblesEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/47?_embed";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let bubblesInfo = [];
@@ -134,6 +134,10 @@
         }
 
         function visBubbles() {
+            let splashImage = bubblesInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelector("#bubbles_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
             document.querySelector("#bubbles_info").innerHTML += bubblesInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "bubbles_info"
             let bubblesHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let bubblesContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
