@@ -161,8 +161,8 @@
             halskaederInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
             console.log(halskaederInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
 
-            const smykkeResponse = await fetch(alleSmykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
-            alleSmykker = await smykkeResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
+            const smykkeResponse = await fetch(alleSmykkerEndpoint); //Der laves en konstant "smykkeResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            alleSmykker = await smykkeResponse.json(); //Dataen som blev fetched gemmes i "alleSmykker"-variablen.
             console.log(alleSmykker); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
 
             visHalskaeder(); //Vi kalder funktionen "visHalskaeder", som skal indsætte indholdet på siden
@@ -182,6 +182,7 @@
             halskaederHeading.textContent += `${halskaederInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra halskæder-siden gennem WP-backend
             halskaederContent.before(halskaederHeading); //Vi indsætter armbånd overskriften før den første paragraph
 
+
             let smykkeContainer = document.querySelector("#alle_smykker"); //Vi definerer en container, der skal indeholde alle smykkerne
             let smykkeTemplate = document.querySelector("#smykke_template"); //Dernæst definerer vi en template, som smykkerne tager udgangspunkt i
             alleSmykker.forEach(smykke => { //For hvert smykke, som blev læst fra WP-backenden skal følgende ske:
@@ -194,7 +195,6 @@
                     smykkeklon.querySelector("p+p").textContent = smykke.pris; //p-taggets tekst sættes lig smykkets beskrivelse
                     smykkeContainer.appendChild(smykkeklon); //Alle de enkelte smykker indsættes i kategori containeren
                 }
-
             });
 
         }
