@@ -14,14 +14,14 @@
     <header>
         <nav>
             <div id="desktop_menu">
-                <a href="smykker.html" class="hover">Smykker</a>
-                <a href="fornyelse.html" class="hover">Fornyelse</a>
+                <a href="smykker.html">Smykker</a>
+                <a href="fornyelse.html">Fornyelse</a>
                 <a href="index.html">
                     <img src="billeder/logo.svg" alt="logo">
                 </a>
 
-                <a href="om-buerholt.html" class="hover">Om Buerholt</a>
-                <a href="kontakt.html" class="hover">Kontakt</a>
+                <a href="om-buerholt.html">Om Buerholt</a>
+                <a href="kontakt.html">Kontakt</a>
             </div>
 
             <div id="mobil_header">
@@ -58,6 +58,15 @@
 
     <section id="halskaeder">
         <section id="halskaeder_splash"></section>
+
+        <section id="breadcrumb_container">
+            <div class="breadcrumb_sti">
+                <a href="smykker.html" class="hover">SMYKKER</a>
+                <p>/</p>
+                <a href="halskaeder.html" class="hover"></a>
+            </div>
+        </section>
+
 
         <section id="halskaeder_info">
 
@@ -129,6 +138,11 @@
             halskaederInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
             console.log(halskaederInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
             visHalskaeder(); //Vi kalder funktionen "visHalskaeder", som skal indsætte indholdet på siden
+            visBreadcrumb();
+        }
+
+        function visBreadcrumb() {
+            document.querySelector(".breadcrumb_sti a:last-child").textContent = halskaederInfo.title.rendered;
         }
 
         function visHalskaeder() {
@@ -142,7 +156,6 @@
             let halskaederContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             halskaederHeading.textContent += `${halskaederInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra halskæder-siden gennem WP-backend
             halskaederContent.before(halskaederHeading); //Vi indsætter armbånd overskriften før den første paragraph
-
         }
 
     </script>

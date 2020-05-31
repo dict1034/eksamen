@@ -881,7 +881,37 @@ footer .col:last-child {
 
 
 
+/************* BRØDKRUMMESTI *************/
+#breadcrumb_container {
+    max-width: 1000px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 40px;
+}
 
+.breadcrumb_sti {
+    padding-top: 60px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.breadcrumb_sti a {
+    color: #7a645a;
+}
+
+.breadcrumb_sti p {
+    margin: 0 10px;
+}
+
+
+/************* BRØDKRUMMESTI SLUT *************/
 
 
 
@@ -905,7 +935,7 @@ footer .col:last-child {
 
 #ringe #ringe_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -949,7 +979,7 @@ footer .col:last-child {
 
 #vielsesringe #vielsesringe_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1016,7 +1046,7 @@ footer .col:last-child {
 
 #oereringe #oereringe_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1089,7 +1119,7 @@ footer .col:last-child {
 
 #armbaand #armbaand_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1159,7 +1189,7 @@ footer .col:last-child {
 
 #halskaeder #halskaeder_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1228,7 +1258,7 @@ footer .col:last-child {
 
 #bubbles #bubbles_info {
     width: 100vw;
-    padding: 40px 40px 80px 40px;
+    padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1659,8 +1689,12 @@ footer .col:last-child {
 
 
 
+    /************* BRØDKRUMMESTI *************/
+    #breadcrumb_container {
+        padding: 0 20px;
+    }
 
-
+    /************* BRØDKRUMMESTI SLUT *************/
 
 
 
