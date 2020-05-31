@@ -751,7 +751,7 @@ footer .col:last-child {
 #om {
     /*    z-index: -1;*/
     position: relative;
-    padding-top: 7vh;
+    margin-top: 7vh;
 }
 
 #om #om_info {
