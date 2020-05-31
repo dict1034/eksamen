@@ -79,6 +79,17 @@
 
         </section>
 
+        <section id="alle_smykker">
+            <template id="smykke_template">
+                <article class="smykke_article">
+                    <img>
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                </article>
+            </template>
+        </section>
+
     </section>
 
 
@@ -131,8 +142,13 @@
         //Vi definerer et endpoint til WP-backenden mht. halskæde-siden
         const halskaederEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/39?_embed";
 
+        //Vi definerer et endpoint til alle smykkerne
+        const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
+
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let halskaederInfo = [];
+        let alleSmykker = [];
+
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -144,6 +160,11 @@
             const pageResponse = await fetch(halskaederEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
             halskaederInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
             console.log(halskaederInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+            const smykkeResponse = await fetch(alleSmykkerEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            alleSmykker = await smykkeResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
+            console.log(alleSmykker); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
             visHalskaeder(); //Vi kalder funktionen "visHalskaeder", som skal indsætte indholdet på siden
         }
 
@@ -152,17 +173,30 @@
             console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelector("#halskaeder_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
 
-
             document.querySelector(".breadcrumb_sti a:last-child").textContent = halskaederInfo.title.rendered; //Vi erstatter linkets indhold med titlen på siden fra WP-backen
             document.querySelector(".breadcrumb_sti a:last-child").href = halskaederInfo.slug + ".html"; //Vi sætter linkets href lig det rigtige dokument
-
-
 
             document.querySelector("#halskaeder_info").innerHTML += halskaederInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "halskaeder_info"
             let halskaederHeading = document.createElement('h1'); //Vi definerer en ny h1-heading
             let halskaederContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             halskaederHeading.textContent += `${halskaederInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra halskæder-siden gennem WP-backend
             halskaederContent.before(halskaederHeading); //Vi indsætter armbånd overskriften før den første paragraph
+
+            let smykkeContainer = document.querySelector("#alle_smykker"); //Vi definerer en container, der skal indeholde alle smykkerne
+            let smykkeTemplate = document.querySelector("#smykke_template"); //Dernæst definerer vi en template, som smykkerne tager udgangspunkt i
+            alleSmykker.forEach(smykke => { //For hvert smykke, som blev læst fra WP-backenden skal følgende ske:
+                if (smykke.kategori == "Halskæder") {
+                    let smykkeklon = smykkeTemplate.cloneNode(true).content; //Hvert smykke tildeles en skabelon / klon
+                    smykkeklon.querySelector("h3").textContent = smykke.navn; //h3-taggets tekst sættes lig smykkets navn
+                    smykkeklon.querySelector("img").src = smykke.billede.guid; //img-taggets source sættes lig smykkebilledet
+                    smykkeklon.querySelector("img").alt = smykke.navn; //img-taggets alt sættes lig smykkenavnet
+                    smykkeklon.querySelector("p").textContent = smykke.beskrivelse; //p-taggets tekst sættes lig smykkets beskrivelse
+                    smykkeklon.querySelector("p+p").textContent = smykke.pris; //p-taggets tekst sættes lig smykkets beskrivelse
+                    smykkeContainer.appendChild(smykkeklon); //Alle de enkelte smykker indsættes i kategori containeren
+                }
+
+            });
+
         }
 
     </script>
