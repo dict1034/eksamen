@@ -59,6 +59,14 @@
     <section id="ringe">
         <section id="ringe_splash"></section>
 
+        <section id="breadcrumb_container">
+            <div class="breadcrumb_sti">
+                <a href="smykker.html" class="hover">SMYKKER</a>
+                <p>/</p>
+                <a href="" class="hover"></a>
+            </div>
+        </section>
+
         <section id="ringe_info">
 
         </section>
@@ -135,6 +143,9 @@
             let splashImage = ringeInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
             console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelector("#ringe_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+            document.querySelector(".breadcrumb_sti a:last-child").textContent = ringeInfo.title.rendered; //Vi erstatter linkets indhold med titlen på siden fra WP-backen
+            document.querySelector(".breadcrumb_sti a:last-child").href = ringeInfo.slug + ".html"; //Vi sætter linkets href lig det rigtige dokument
 
             document.querySelector("#ringe_info").innerHTML += ringeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "smykke_info"
             let ringeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading

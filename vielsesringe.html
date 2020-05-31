@@ -59,6 +59,14 @@
     <section id="vielsesringe">
         <section id="vielsesringe_splash"></section>
 
+        <section id="breadcrumb_container">
+            <div class="breadcrumb_sti">
+                <a href="smykker.html" class="hover">SMYKKER</a>
+                <p>/</p>
+                <a href="" class="hover"></a>
+            </div>
+        </section>
+
         <section id="vielsesringe_info">
 
         </section>
@@ -136,6 +144,8 @@
             console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelector("#vielsesringe_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
 
+            document.querySelector(".breadcrumb_sti a:last-child").textContent = vielsesRingeInfo.title.rendered; //Vi erstatter linkets indhold med titlen på siden fra WP-backen
+            document.querySelector(".breadcrumb_sti a:last-child").href = vielsesRingeInfo.slug + ".html"; //Vi sætter linkets href lig det rigtige dokument
 
             document.querySelector("#vielsesringe_info").innerHTML += vielsesRingeInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "vielsesringe_info"
             let vielsesRingeHeading = document.createElement('h1'); //Vi definerer en ny h1-heading

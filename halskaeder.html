@@ -63,7 +63,7 @@
             <div class="breadcrumb_sti">
                 <a href="smykker.html" class="hover">SMYKKER</a>
                 <p>/</p>
-                <a href="halskaeder.html" class="hover"></a>
+                <a href="" class="hover"></a>
             </div>
         </section>
 
@@ -138,17 +138,17 @@
             halskaederInfo = await pageResponse.json(); //Dataen som blev fetched gemmes i "halskaederInfo"-variablen.
             console.log(halskaederInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
             visHalskaeder(); //Vi kalder funktionen "visHalskaeder", som skal indsætte indholdet på siden
-            visBreadcrumb();
-        }
-
-        function visBreadcrumb() {
-            document.querySelector(".breadcrumb_sti a:last-child").textContent = halskaederInfo.title.rendered;
         }
 
         function visHalskaeder() {
             let splashImage = halskaederInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
             console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelector("#halskaeder_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
+            document.querySelector(".breadcrumb_sti a:last-child").textContent = halskaederInfo.title.rendered; //Vi erstatter linkets indhold med titlen på siden fra WP-backen
+            document.querySelector(".breadcrumb_sti a:last-child").href = halskaederInfo.slug + ".html"; //Vi sætter linkets href lig det rigtige dokument
+
 
 
             document.querySelector("#halskaeder_info").innerHTML += halskaederInfo.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med ID'et "halskaeder_info"
