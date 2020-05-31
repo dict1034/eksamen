@@ -95,6 +95,10 @@ nav {}
     /*    font-weight: 700;*/
 }
 
+#desktop_menu a:nth-child(3):hover {
+    transform: scale(1);
+    /*    font-weight: 700;*/
+}
 
 
 
@@ -119,12 +123,8 @@ nav {}
 }
 
 #mobil_header a:hover {
-    transform: scale(1.02);
+    transform: scale(1);
 }
-
-
-
-
 
 
 #mobil_menu {
@@ -389,6 +389,71 @@ footer .col:last-child {
 
 
 
+
+/************* SCROLL IKON *************/
+.scroll_ikon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll_ikon p {
+    font-size: .8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    text-shadow: 3px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+/************* SCROLL IKON SLUT *************/
+
+
+
+
+
+
+
+
+
 /************* LANDINGPAGE *************/
 
 
@@ -477,6 +542,9 @@ footer .col:last-child {
     background-position: 40%;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #kontakt #kontakt_info {
@@ -541,6 +609,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #smykker #smykke_info {
@@ -692,6 +763,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #fornyelse #fornyelse_info {
@@ -931,6 +1005,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #ringe #ringe_info {
@@ -975,6 +1052,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #vielsesringe #vielsesringe_info {
@@ -1042,6 +1122,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #oereringe #oereringe_info {
@@ -1115,6 +1198,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #armbaand #armbaand_info {
@@ -1185,6 +1271,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #halskaeder #halskaeder_info {
@@ -1254,6 +1343,9 @@ footer .col:last-child {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #bubbles #bubbles_info {
