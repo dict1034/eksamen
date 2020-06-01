@@ -455,12 +455,28 @@ footer .col:last-child {
 
 
 /************* LANDINGPAGE *************/
-#landingpage #landingpage_splash {
+#landingpage #landingpage_splash_video {
     position: relative;
     z-index: -1;
     top: 0;
     width: 100vw;
     height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#landingpage #landingpage_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
     background-repeat: no-repeat;
@@ -561,6 +577,10 @@ footer .col:last-child {
 
 .landingpage_knap a:hover {
     color: #fff;
+}
+
+#landingpage #insta_gallery {
+    padding-top: 40px;
 }
 
 

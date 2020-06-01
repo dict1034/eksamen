@@ -59,7 +59,7 @@
 
 
     <section id="landingpage">
-        <section id="landingpage_splash">
+        <section id="landingpage_splash_video">
             <div class="scroll_ikon">
                 <div class="mousey">
                     <div class="scroller"></div>
@@ -87,7 +87,7 @@
         <section id="landingpage_vielsesringe">
         </section>
 
-        <section id="landingpage_splash">
+        <section id="landingpage_splash" class="splash_del_2">
             <div class="scroll_ikon">
                 <div class="mousey">
                     <div class="scroller"></div>
@@ -198,6 +198,21 @@
             let landingpageHeadingContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             landingpageHeading.textContent += `${landingpageInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             landingpageHeadingContent.before(landingpageHeading); //Vi indsætter smykke overskriften før den første paragraph
+
+            //document.querySelectorAll("#landingpage_splash")[1].innerHTML += content[2];
+
+
+
+
+
+
+            let idk = content[2].match(/\bhttps?:\/\/\S+/gi); //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            let idk2 = idk[0].substring(0, idk[0].length - 1); //Vi fjerner det sidste gåseøjnetegn fra strengen
+            console.log(idk2); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelectorAll("#landingpage_splash")[1].style.backgroundImage = `url(${idk2})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
+
 
 
             visInsta();
