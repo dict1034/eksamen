@@ -140,8 +140,8 @@
             console.log(omInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
 
 
-            const instaResponse = await fetch(instaEndpoint); //Der laves en konstant "pageResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
-            instaInfo = await instaResponse.json(); //Dataen som blev fetched gemmes i "smykke"-variablen.
+            const instaResponse = await fetch(instaEndpoint); //Der laves en konstant "instaResponse", som fanger alt data fra endpointet. Først når dataen er fetched, kører programmet videre
+            instaInfo = await instaResponse.json(); //Dataen som blev fetched gemmes i "instaInfo"-variablen.
             console.log(instaInfo); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
 
 

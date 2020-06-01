@@ -455,6 +455,36 @@ footer .col:last-child {
 
 
 /************* LANDINGPAGE *************/
+#landingpage #landingpage_splash {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 92vh;
+    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #6E645E;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#landingpage #landingpage_info {
+    width: 100vw;
+    padding: 40px 40px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#landingpage #landingpage_info h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+}
 
 
 
@@ -463,6 +493,75 @@ footer .col:last-child {
 
 
 
+#landingpage_bubbles {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 40px 40px 40px;
+}
+
+#landingpage #landingpage_bubbles .wp-block-columns {
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#landingpage #landingpage_bubbles .wp-block-columns:last-child {
+    flex-direction: column;
+}
+
+#landingpage #landingpage_bubbles h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#landingpage #landingpage_bubbles .wp-block-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landingpage_knap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: #7A645A;
+    padding: 6px 6px;
+    transition: transform .3s, box-shadow .3s;
+    align-self: center;
+    max-width: 125px;
+}
+
+#landingpage #landingpage_bubbles .wp-block-columns .wp-block-column:first-child .landingpage_knap {
+    max-width: 125px;
+}
+
+#landingpage #landingpage_bubbles .wp-block-columns .wp-block-column:last-child .landingpage_knap {
+    max-width: 155px;
+}
+
+.landingpage_knap a {
+    border: #FAFAFA 1px solid;
+    padding: 8px 12px;
+    color: #fafafa;
+    width: auto;
+    transition: color .3s;
+}
+
+
+.landingpage_knap:hover {
+    /*    background-color: rgba(122, 100, 90, 0.96);*/
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.landingpage_knap a:hover {
+    color: #fff;
+}
 
 
 
@@ -869,7 +968,7 @@ footer .col:last-child {
     align-items: center;
 }
 
-#om #insta_gallery {
+#insta_gallery {
     width: 100vw;
     height: 60vh;
     padding: 0 40px;
@@ -880,7 +979,7 @@ footer .col:last-child {
 
 }
 
-#om #insta_gallery #insta_grid_container {
+#insta_gallery #insta_grid_container {
     display: grid;
     grid-column-gap: 2vw;
     grid-row-gap: 2vw;
@@ -1595,6 +1694,107 @@ footer .col:last-child {
 
 
 
+
+
+
+    /************* LANDINGPAGE *************/
+    #landingpage #landingpage_info {
+        flex-direction: row;
+        justify-content: center;
+        height: 90vh;
+    }
+
+    #landingpage #landingpage_info .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #landingpage #landingpage_info .wp-block-column {
+        width: 50%;
+        padding: 20px;
+        max-width: 50%;
+    }
+
+    #landingpage #landingpage_info .wp-block-column:first-child,
+    #landingpage #landingpage_bubbles .wp-block-column:first-child {
+        padding-right: 35px;
+    }
+
+    #landingpage #landingpage_info .wp-block-column:last-child,
+    #landingpage #landingpage_bubbles .wp-block-column:last-child {
+        padding-left: 35px;
+    }
+
+    #landingpage #landingpage_info .wp-block-column h1,
+    #landingpage #landingpage_bubbles .wp-block-column h1 {
+        margin: 0;
+    }
+
+    #landingpage #landingpage_info .wp-block-column p,
+    #landingpage #landingpage_bubbles .wp-block-column p {
+        margin: 5px 0;
+    }
+
+
+    #landingpage #landingpage_bubbles {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-columns:last-child {
+        flex-direction: row;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column {
+        width: 50%;
+        padding: 20px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #landingpage #landingpage_bubbles .wp-block-column p {
+        max-width: 100%;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column h2 {
+        align-self: flex-start;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column h1,
+    #landingpage #landingpage_bubbles .wp-block-column h2 {
+        font-size: 2rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /************* LANDINGPAGE SLUT *************/
+
+
+
     /************* KONTAKT *************/
     #kontakt .kontakt_grid {
         display: grid;
@@ -1778,7 +1978,7 @@ footer .col:last-child {
         margin: 5px 0;
     }
 
-    #om #insta_gallery {
+    #insta_gallery {
         height: 100vh;
     }
 
@@ -1979,11 +2179,11 @@ footer .col:last-child {
         padding-right: 10%;
     }
 
-    #om #insta_gallery {
+    #insta_gallery {
         height: 140vh;
     }
 
-    #om #insta_gallery #insta_grid_container {
+    #insta_gallery #insta_grid_container {
         padding: 0 7%;
         padding-top: 60px;
         padding-bottom: 60px;
@@ -2089,6 +2289,78 @@ footer .col:last-child {
 @media only screen and (min-width:1200px) {
 
 
+    /************* LANDINGPAGE *************/
+    #landingpage #landingpage_info {
+        flex-direction: row;
+        justify-content: center;
+        height: 90vh;
+    }
+
+    #landingpage #landingpage_info .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #landingpage #landingpage_info .wp-block-column {
+        width: 50%;
+        padding: 20px;
+        max-width: 35%;
+    }
+
+    #landingpage #landingpage_info .wp-block-column:first-child,
+    #landingpage #landingpage_bubbles .wp-block-column:first-child {
+        padding-right: 35px;
+    }
+
+    #landingpage #landingpage_info .wp-block-column:last-child,
+    #landingpage #landingpage_bubbles .wp-block-column:last-child {
+        padding-left: 35px;
+    }
+
+    #landingpage #landingpage_info .wp-block-column h1,
+    #landingpage #landingpage_bubbles .wp-block-column h1 {
+        margin: 0;
+    }
+
+    #landingpage #landingpage_info .wp-block-column p,
+    #landingpage #landingpage_bubbles .wp-block-column p {
+        margin: 5px 0;
+    }
+
+
+    #landingpage #landingpage_bubbles {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column {
+        width: 50%;
+    }
+
+
+    #landingpage #landingpage_bubbles .wp-block-column p {
+        max-width: 85%;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column h1,
+    #landingpage #landingpage_bubbles .wp-block-column h2 {
+        font-size: 3rem;
+        max-width: 85%;
+        align-self: center;
+    }
+
+    /************* LANDINGPAGE SLUT *************/
+
+
 
 
 
@@ -2171,6 +2443,31 @@ footer .col:last-child {
 
 @media only screen and (min-width:1500px) {
 
+    /************* LANDINGPAGE *************/
+    #landingpage #landingpage_bubbles .wp-block-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column {
+        width: 45%;
+    }
+
+
+    #landingpage #landingpage_bubbles .wp-block-column p {
+        max-width: 75%;
+    }
+
+    #landingpage #landingpage_bubbles .wp-block-column h1,
+    #landingpage #landingpage_bubbles .wp-block-column h2 {
+        font-size: 3rem;
+        max-width: 75%;
+        align-self: center;
+    }
+
+    /************* LANDINGPAGE SLUT *************/
 
 
 
