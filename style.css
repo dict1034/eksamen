@@ -473,7 +473,6 @@ footer .col:last-child {
 
 #landingpage #landingpage_splash {
     position: relative;
-    z-index: -1;
     top: 0;
     width: 100vw;
     height: 100vh;
@@ -481,9 +480,10 @@ footer .col:last-child {
     background-position: 45%;
     background-repeat: no-repeat;
     background-size: cover;
+    flex-direction: column;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #landingpage #landingpage_info {
@@ -500,10 +500,6 @@ footer .col:last-child {
     margin: 0;
     margin-top: 40px;
 }
-
-
-
-
 
 
 
@@ -587,7 +583,31 @@ footer .col:last-child {
 
 
 
+#landingpage_splash .splash_info {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    border: 4px solid #7a645a;
+    padding: 20px 40px;
+    margin-bottom: 30%;
+    justify-self: center;
+}
 
+#landingpage_splash .splash_info h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#landingpage_splash .splash_info .landingpage_knap {
+    max-width: 175px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -1795,6 +1815,38 @@ footer .col:last-child {
 
 
 
+    #landingpage_splash .splash_info {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 10%;
+        margin-left: 5%;
+    }
+
+    #landingpage #landingpage_splash .info_right {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 0;
+        position: absolute;
+        right: 3%;
+        bottom: 18%;
+    }
+
+
 
 
 
@@ -2165,6 +2217,51 @@ footer .col:last-child {
 @media only screen and (min-width:992px) {
 
 
+
+
+    /************* LANDINGPAGE *************/
+    #landingpage_splash .splash_info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 3%;
+    }
+
+    #landingpage #landingpage_splash .info_right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 0;
+        position: absolute;
+        right: 3%;
+        bottom: 12%;
+    }
+
+
+    /************* LANDINGPAGE SLUT *************/
+
+
+
+
+
+
+
+
+
     /************* FORNYELSE *************/
 
     #fornyelse #fornyelse_info .wp-block-columns {
@@ -2371,6 +2468,40 @@ footer .col:last-child {
         align-self: center;
     }
 
+
+
+
+    #landingpage_splash .splash_info {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 3%;
+    }
+
+    #landingpage #landingpage_splash .info_right {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 0;
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+    }
+
     /************* LANDINGPAGE SLUT *************/
 
 
@@ -2478,6 +2609,39 @@ footer .col:last-child {
         font-size: 3rem;
         max-width: 75%;
         align-self: center;
+    }
+
+
+
+    #landingpage_splash .splash_info {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 5%;
+    }
+
+    #landingpage #landingpage_splash .info_right {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fafafa;
+        border: 4px solid #7a645a;
+        padding: 20px 40px;
+        margin-bottom: 5%;
+        margin-left: 0;
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
     }
 
     /************* LANDINGPAGE SLUT *************/
