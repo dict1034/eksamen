@@ -168,7 +168,7 @@
                 instaPostCounter++;
                 let instaKlon = instaTemplate.cloneNode(true).content;
                 console.log(pic.node.display_url);
-                instaKlon.querySelector("a").href = "https://www.instagram.com/jewelrybybuerholt";
+                instaKlon.querySelector("a").href = `https://www.instagram.com/p/${pic.node.shortcode}`;
                 instaKlon.querySelector("a").classList.add(`post${instaPostCounter}`);
                 instaKlon.querySelector("a").style.backgroundImage = `url(${pic.node.display_url})`;
                 instaContainer.appendChild(instaKlon);
