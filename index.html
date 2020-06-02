@@ -60,12 +60,16 @@
 
     <section id="landingpage">
         <section id="landingpage_splash_video">
+            <video autoplay muted loop id="splash_video">
+                <source src="splashvideo.mp4" type="video/mp4">
+            </video>
             <div class="scroll_ikon">
                 <div class="mousey">
                     <div class="scroller"></div>
                 </div>
                 <p>SCROLL</p>
             </div>
+
         </section>
 
         <section id="landingpage_info">
@@ -157,6 +161,12 @@
                 <p>vbuerholt@gmail.com</p>
                 <p>CVR nr: 32500838</p>
             </div>
+
+            <div class="col">
+                <p>Mandag – Tirsdag: Lukket</p>
+                <p>Onsdag – Fredag: 11 – 17.30</p>
+                <p>Lørdag: 10 – 14</p>
+            </div>
         </div>
 
         <div class="social_links">
@@ -226,7 +236,7 @@
 
 
             let idk = content[2].match(/\bhttps?:\/\/\S+/gi); //Vi definerer en variabel, som indeholder URL'en til splashbilledet
-            let idk2 = idk[0].substring(0, idk[0].length - 1); //Vi fjerner det sidste gåseøjnetegn fra strengen
+            let idk2 = idk[4].substring(0, idk[0].length - 1); //Vi fjerner det sidste gåseøjnetegn fra strengen
             console.log(idk2); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelectorAll("#landingpage_splash")[1].style.backgroundImage = `url(${idk2})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
 
