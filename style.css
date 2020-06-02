@@ -456,6 +456,10 @@ footer .col:last-child {
 
 
 /************* LANDINGPAGE *************/
+#landingpage {
+    overflow-x: hidden;
+}
+
 #landingpage #landingpage_splash_video {
     position: relative;
     z-index: -1;
