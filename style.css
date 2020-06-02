@@ -804,13 +804,12 @@ footer .col:last-child {
     color: #7a645a;
     font-size: 1rem;
     margin: 5px;
-    max-width: 80%;
+    max-width: 100%;
 }
 
-
-
-#smykker #alle_smykker img {
-    width: 70%;
+#alle_smykker img {
+    width: 60%;
+    align-self: center;
 }
 
 #smykker #kategorier {
@@ -845,9 +844,10 @@ footer .col:last-child {
     width: 100%;
 }
 
-
-
-
+#alle_smykker article h3,
+#alle_smykker article p {
+    margin: 3px 0;
+}
 
 
 
@@ -1597,17 +1597,21 @@ footer .col:last-child {
 
     #alle_smykker article {
         /*        border: 1px solid #333;*/
-        padding: 0 10% 0 10%;
+        /*        padding: 0 10% 0 10%;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #alle_smykker article .smykke_text_container {
+        display: flex;
+        flex-direction: column;
+
     }
 
     #alle_smykker article p,
     #alle_smykker article h3 {
         max-width: 100%;
-        padding: 0 5%;
-    }
-
-    #alle_smykker article img {
-        width: 100%;
     }
 
 
@@ -1630,46 +1634,12 @@ footer .col:last-child {
     #alle_smykker {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-column-gap: 2vw;
-        grid-row-gap: 5vw;
+        grid-column-gap: 5vw;
+        grid-row-gap: 10vw;
         margin: 0 auto;
         max-width: 1200px;
         padding: 0 40px 40px 40px;
         justify-items: end;
-    }
-
-    #alle_smykker article p,
-    #alle_smykker article h3 {
-        max-width: 100%;
-        padding: 0 5%;
-    }
-
-
-    #alle_smykker article:nth-child(2n+2) {
-        /*        border: 1px solid #333;*/
-        padding: 0 20% 0 0;
-    }
-
-    #alle_smykker article:nth-child(2n+2) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(2n+2) img {
-        width: 100%;
-    }
-
-
-    #alle_smykker article:nth-child(2n+3) {
-        /*        border: 1px solid #bc1818;*/
-        padding: 0 0 0 20%;
-    }
-
-    #alle_smykker article:nth-child(2n+3) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(2n+3) img {
-        width: 100%;
     }
 
 
@@ -2192,41 +2162,12 @@ footer .col:last-child {
     #alle_smykker {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-column-gap: 2vw;
-        grid-row-gap: 5vw;
+        grid-column-gap: 5vw;
+        grid-row-gap: 10vw;
         margin: 0 auto;
         max-width: 1200px;
         padding: 0 40px 40px 40px;
         justify-items: end;
-    }
-
-
-
-    #alle_smykker article:nth-child(2n+2) {
-        /*        border: 1px solid #333;*/
-        padding: 0 20% 0 0;
-    }
-
-    #alle_smykker article:nth-child(2n+2) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(2n+2) img {
-        width: 100%;
-    }
-
-
-    #alle_smykker article:nth-child(2n+3) {
-        /*        border: 1px solid #bc1818;*/
-        padding: 0 0 0 20%;
-    }
-
-    #alle_smykker article:nth-child(2n+3) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(2n+3) img {
-        width: 100%;
     }
 
 
@@ -2364,54 +2305,15 @@ footer .col:last-child {
 
     #alle_smykker {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-column-gap: 5vw;
-        grid-row-gap: 1vw;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-column-gap: 12vw;
+        grid-row-gap: 8vw;
         margin: 0 auto;
         max-width: 1200px;
         padding: 0 40px 40px 40px;
         justify-items: end;
     }
 
-
-
-    #alle_smykker article:nth-child(3n+4) {
-        /*        border: 1px solid #333;*/
-        padding: 0 0 0 20%;
-    }
-
-    #alle_smykker article:nth-child(3n+4) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(3n+4) img {
-        width: 100%;
-    }
-
-    #alle_smykker article:nth-child(3n+3) {
-        /*        border: 1px solid #333;*/
-        padding: 0 10% 0 10%;
-    }
-
-    #alle_smykker article:nth-child(3n+3) p {
-        max-width: 100%;
-    }
-
-    #alle_smykker article:nth-child(3n+3) img {
-        width: 100%;
-    }
-
-    #alle_smykker article:nth-child(3n+2) {
-        padding: 0 20% 0 0;
-    }
-
-    #alle_smykker article:nth-child(3n+2) p {
-        max-width: 90%;
-    }
-
-    #alle_smykker article:nth-child(3n+2) img {
-        width: 100%;
-    }
 
     /************* SMYKKER SLUT *************/
 }
@@ -2598,11 +2500,6 @@ footer .col:last-child {
         max-width: 1200px;
         padding: 0 40px 40px 40px;
         justify-items: end;
-    }
-
-    #alle_smykker p,
-    #alle_smykker h3 {
-        margin: 5px 0;
     }
 
     /************* SMYKKER SLUT *************/
