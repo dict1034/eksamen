@@ -349,6 +349,13 @@ footer .footer_info {
 
 }
 
+footer .footer_info a {
+    font-size: 1rem;
+    text-transform: none;
+    font-weight: 300;
+
+}
+
 footer .social_links {
     display: flex;
     flex-direction: row;
