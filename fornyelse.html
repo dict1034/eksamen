@@ -145,13 +145,7 @@
             let fornyelseContent = document.querySelector(".wp-block-column p"); //Dernæst definerer vi den første paragraph i det indsatte indhold fra WP-backend
             fornyelseHeading.textContent += `${fornyelseInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             fornyelseContent.before(fornyelseHeading); //Vi indsætter smykke overskriften før den første paragraph
-
-            let fornyelseAfsnit = document.querySelectorAll(".wp-block-columns"); //Der defineres en variabel, der indeholder alle kolonne-containere
-            fornyelseAfsnit.forEach(afsnit => { //For hver kolonne-container skal følgende ske:
-                let journey = document.createElement('div'); //Vi definerer en variabel som er lig et nyt DOM-element "div"
-                journey.classList.add("journey"); //Vi giver den klassen "journey"
-                afsnit.before(journey); //Hver div indsættes før kolonne-containerne
-            });
+        });
 
         }
 

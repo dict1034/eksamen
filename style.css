@@ -890,7 +890,7 @@ footer .col:last-child {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-column-gap: 5vw;
-    grid-row-gap: 1vw;
+    grid-row-gap: 2vw;
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 40px 40px 40px;
@@ -2586,11 +2586,16 @@ footer .col:last-child {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-column-gap: 5vw;
-        grid-row-gap: 1vw;
+        grid-row-gap: 6vw;
         margin: 0 auto;
         max-width: 1200px;
         padding: 0 40px 40px 40px;
         justify-items: end;
+    }
+
+    #alle_smykker p,
+    #alle_smykker h3 {
+        margin: 5px 0;
     }
 
     /************* SMYKKER SLUT *************/
