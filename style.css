@@ -477,6 +477,15 @@ footer .col:last-child {
     transform-origin: top left;
 }
 
+#landingpage #landingpage_splash_video video {
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 #landingpage #landingpage_splash_video #splash_video {
     height: 100%;
 }
