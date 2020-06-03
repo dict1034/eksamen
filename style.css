@@ -1138,7 +1138,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1150,7 +1150,7 @@ footer .col:last-child {
 }
 
 #ringe #ringe_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1184,7 +1184,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1196,7 +1196,7 @@ footer .col:last-child {
 }
 
 #vielsesringe #vielsesringe_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1253,7 +1253,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1265,7 +1265,7 @@ footer .col:last-child {
 }
 
 #oereringe #oereringe_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1328,7 +1328,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1340,7 +1340,7 @@ footer .col:last-child {
 }
 
 #armbaand #armbaand_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1400,7 +1400,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1412,7 +1412,7 @@ footer .col:last-child {
 }
 
 #halskaeder #halskaeder_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1471,7 +1471,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1483,7 +1483,7 @@ footer .col:last-child {
 }
 
 #bubbles #bubbles_info {
-/*    width: 100vw;*/
+    /*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -2224,6 +2224,12 @@ footer .col:last-child {
         padding-bottom: 30px;
     }
 
+
+    #fornyelse #fornyelse_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
     /************* FORNYELSE SLUT *************/
 
 
@@ -2259,16 +2265,23 @@ footer .col:last-child {
 
 
     /************* KONTAKT *************/
+
+
     #kontakt .kontakt_grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
-        grid-column-gap: 40px;
+        grid-column-gap: 90px;
         justify-items: center;
     }
 
     #kontakt #kontakt_info .box_info p:last-child {
         max-width: 60%;
 
+    }
+
+    #kontakt #kontakt_splash {
+        margin: 0 9vw;
+        height: 75vh;
     }
 
     /************* KONTAKT SLUT *************/
@@ -2307,6 +2320,44 @@ footer .col:last-child {
 
 
     /************* SMYKKER SLUT *************/
+
+
+    #smykker #smykker_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #armbaand #armbaand_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #bubbles #bubbles_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #halskaeder #halskaeder_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #oereringe #oereringe_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #ringe #ringe_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #vielsesringe #vielsesringe_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+
 }
 
 @media only screen and (min-width:1200px) {
