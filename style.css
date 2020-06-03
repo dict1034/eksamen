@@ -1905,7 +1905,7 @@ footer .col:last-child {
         flex-wrap: wrap;
         padding-left: 5%;
         padding-right: 5%;
-        background-image: url(billeder/idk.svg);
+        background-image: url();
         background-position: center;
         background-repeat: no-repeat;
     }
