@@ -121,7 +121,7 @@
 
 
     <a href="halskaeder.html#top">
-        <div id="to_top"></div>
+        <div id="to_top" class="to_top_hide"></div>
     </a>
 
 
@@ -171,6 +171,19 @@
         let halskaederInfo = [];
         let alleSmykker = [];
         let kategorier = [];
+
+        setInterval(function() {
+            if (window.scrollY > 1000) { //Hvis y-positionen er over 1000, så vises to-top knappen
+                document.querySelector("#to_top").classList.remove("to_top_hide");
+                document.querySelector("#to_top").classList.remove("to_top_fade_out");
+                document.querySelector("#to_top").classList.add("to_top_fade_in");
+            }
+
+            if (window.scrollY < 1000) { //Hvis y-positionen er under 1000, så skjules to-top knappen
+                document.querySelector("#to_top").classList.remove("to_top_fade_in");
+                document.querySelector("#to_top").classList.add("to_top_fade_out");
+            }
+        }, 750);
 
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"

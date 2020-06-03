@@ -419,8 +419,13 @@ footer .col:last-child {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    z-index: 2;
 
     transition: transform .3s, box-shadow .3s, background-size .3s;
+}
+
+.to_top_hide {
+    display: none;
 }
 
 #to_top:hover {
@@ -429,6 +434,46 @@ footer .col:last-child {
     background-size: 33%;
 }
 
+.to_top_fade_in {
+    animation-name: to_top_fade_in_kf;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.to_top_fade_out {
+    animation-name: to_top_fade_out_kf;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes to_top_fade_in_kf {
+    0% {
+        display: none;
+        opacity: 0%;
+    }
+
+    100% {
+        display: block;
+        opacity: 100%;
+    }
+}
+
+
+@keyframes to_top_fade_out_kf {
+    0% {
+        display: block;
+        opacity: 100%;
+    }
+
+    100% {
+        display: none;
+        opacity: 0%;
+    }
+}
 
 /************* TO TOP SLUT *************/
 
