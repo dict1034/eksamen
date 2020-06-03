@@ -474,16 +474,16 @@ footer .col:last-child {
     height: 92vh;
     width: 100vw;
     left: 0;
-    transform-origin: top left;
+    margin-bottom: 40px;
 }
 
 #landingpage #landingpage_splash_video video {
-    object-fit: fill;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    z-index: -1;
 }
 
 #landingpage #landingpage_splash_video #splash_video {
@@ -629,13 +629,13 @@ footer .col:last-child {
 }
 
 #landingpage #landingpage_splash_video .scroll_ikon {
-    margin-top: -130px;
-    z-index: 1;
+    /*    margin-top: -130px;*/
+    bottom: 15px;
+    position: absolute;
+    left: 47.5vw;
 }
 
-#landingpage #landingpage_splash_video .scroll_ikon p {
-    z-index: 1;
-}
+#landingpage #landingpage_splash_video .scroll_ikon p {}
 
 
 
@@ -2575,6 +2575,8 @@ footer .col:last-child {
         bottom: 10%;
     }
 
+
+    /*
     #landingpage #landingpage_splash_video {
         position: relative;
         z-index: -1;
@@ -2589,6 +2591,7 @@ footer .col:last-child {
     #landingpage #landingpage_splash_video #splash_video {
         height: 100%;
     }
+*/
 
     /************* LANDINGPAGE SLUT *************/
 
