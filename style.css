@@ -77,9 +77,9 @@ nav {}
 #desktop_menu {
     display: none;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100vw;
+    /*    width: 100vw;*/
     background-color: #fafafa;
 }
 
@@ -328,7 +328,7 @@ footer {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    /*    width: 100vw;*/
     background-color: #fff;
     padding-bottom: 20px;
 }
@@ -447,7 +447,7 @@ footer .col:last-child {
     z-index: -1;
     top: 0;
     height: 92vh;
-    width: 100vw;
+    /*    width: 100vw;*/
     left: 0;
     margin-bottom: 40px;
 }
@@ -468,7 +468,7 @@ footer .col:last-child {
 #landingpage #landingpage_splash {
     position: relative;
     top: 0;
-    width: 100vw;
+    /*    width: 100vw;*/
     height: 100vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -481,7 +481,7 @@ footer .col:last-child {
 }
 
 #landingpage #landingpage_info {
-    width: 100vw;
+    /*    width: 100vw;*/
     padding: 40px 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -499,7 +499,7 @@ footer .col:last-child {
 
 
 #landingpage_bubbles {
-    width: 100vw;
+    /*    width: 100vw;*/
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -670,7 +670,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+    /*    width: 100vw;*/
     height: 92vh;
     background-image: url();
     background-position: 40%;
@@ -682,7 +682,7 @@ footer .col:last-child {
 }
 
 #kontakt #kontakt_info {
-    width: 100vw;
+    /*    width: 100vw;*/
     padding: 40px;
     height: 100vh;
     display: flex;
@@ -736,7 +736,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -748,7 +748,7 @@ footer .col:last-child {
 }
 
 #smykker #smykke_info {
-    width: 100vw;
+    /*    width: 100vw;*/
     padding: 40px 40px 0 40px;
     display: flex;
     flex-direction: column;
@@ -897,7 +897,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+    /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -909,7 +909,7 @@ footer .col:last-child {
 }
 
 #fornyelse #fornyelse_info {
-    width: 100vw;
+    /*    width: 100vw;*/
     padding: 40px 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1002,7 +1002,7 @@ footer .col:last-child {
 }
 
 #insta_gallery {
-    width: 100vw;
+    /*    width: 100vw;*/
     height: 60vh;
     padding: 0 40px;
     display: flex;
@@ -1138,7 +1138,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1150,7 +1150,7 @@ footer .col:last-child {
 }
 
 #ringe #ringe_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1184,7 +1184,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1196,7 +1196,7 @@ footer .col:last-child {
 }
 
 #vielsesringe #vielsesringe_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1253,7 +1253,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1265,7 +1265,7 @@ footer .col:last-child {
 }
 
 #oereringe #oereringe_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1328,7 +1328,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1340,7 +1340,7 @@ footer .col:last-child {
 }
 
 #armbaand #armbaand_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1400,7 +1400,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1412,7 +1412,7 @@ footer .col:last-child {
 }
 
 #halskaeder #halskaeder_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1471,7 +1471,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    width: 100vw;
+/*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
     background-position: 45%;
@@ -1483,7 +1483,7 @@ footer .col:last-child {
 }
 
 #bubbles #bubbles_info {
-    width: 100vw;
+/*    width: 100vw;*/
     padding: 0 40px 80px 40px;
     display: flex;
     flex-direction: column;
@@ -1695,6 +1695,9 @@ footer .col:last-child {
 
 
     /************* LANDINGPAGE *************/
+
+
+
     #landingpage #landingpage_info {
         flex-direction: row;
         justify-content: center;
@@ -2156,6 +2159,16 @@ footer .col:last-child {
 
 
     /************* LANDINGPAGE *************/
+    #landingpage #landingpage_splash_video {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
+    #landingpage #landingpage_splash {
+        margin: 0 9vw;
+        height: 75vh;
+    }
+
     #landingpage_splash .splash_info {
         width: 50%;
         display: flex;
@@ -2187,6 +2200,9 @@ footer .col:last-child {
         bottom: 12%;
     }
 
+    #insta_gallery {
+        padding: 0 2vw;
+    }
 
     /************* LANDINGPAGE SLUT *************/
 
