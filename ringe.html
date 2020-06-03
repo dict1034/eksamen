@@ -63,6 +63,18 @@
         <section id="ringe_splash">
         </section>
 
+        <section id="kategorier">
+            <template id="kategori_template">
+                <article class="kategori_article">
+                    <a href="">
+                        <img>
+                        <h3></h3>
+                    </a>
+                </article>
+            </template>
+
+        </section>
+
         <section id="breadcrumb_container">
             <div class="breadcrumb_sti">
                 <a href="smykker.html" class="hover">SMYKKER</a>
@@ -151,11 +163,13 @@
         const ringeInfoEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/pages/31?_embed";
 
         //Vi definerer et endpoint til alle smykkerne
-        const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100"
+        const alleSmykkerEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykke/?per_page=100";
+        const kategoriEndpoint = "https://dictegeertinger.dk/eksamen/web/wordpress/wp-json/wp/v2/smykkekategori";
 
         //Vi definerer en variabel, som skal indeholde alt data fra JSON
         let ringeInfo = [];
         let alleSmykker = [];
+        let kategorier = [];
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -172,6 +186,11 @@
             alleSmykker = await smykkeResponse.json(); //Dataen som blev fetched gemmes i "alleSmykker"-variablen.
             console.log(alleSmykker); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
 
+            const kategoriResponse = await fetch(kategoriEndpoint); //Der laves en konstant "kategoriResponse", som fanger alt data fra "kategoriEndpoint". Først når dataen er fetched, kører programmet videre
+            kategorier = await kategoriResponse.json(); //Dataen som blev fetched gemmes i "kategorier"-variablen.
+            console.log(kategorier); //Vi console-logger for at tjekke om dataen blev fetched succesfuldt
+
+
             visRinge(); //Vi kalder funktionen "visRinge", som skal indsætte indholdet på siden
         }
 
@@ -179,6 +198,17 @@
             let splashImage = ringeInfo._embedded['wp:featuredmedia'][0].source_url; //Vi definerer en variabel, som indeholder URL'en til splashbilledet
             console.log(splashImage); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
             document.querySelector("#ringe_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+            let kategoriContainer = document.querySelector("#kategorier"); //Vi definerer en container, der skal indeholde alle de klikbare kategorier
+            let kategoriTemplate = document.querySelector("#kategori_template"); //Dernæst definerer vi en template, som kategorierne tager udgangspunkt i
+            kategorier.forEach(kategori => { //For hver kategori, som blev læst fra WP-backenden skal følgende ske:
+                let kategoriKlon = kategoriTemplate.cloneNode(true).content; //Hver kategori tildeles en skabelon / klon
+                kategoriKlon.querySelector("a").href = `${kategori.slug}.html`; //a-taggets href sættes lig sluggen på kategorien
+                kategoriKlon.querySelector("h3").textContent = kategori.kategori_navn; //h3-taggets tekst sættes lig kategorinavnet
+                kategoriKlon.querySelector("img").src = kategori.kategori_billede.guid; //img-taggets source sættes lig kategoribilledet
+                kategoriKlon.querySelector("img").alt = kategori.kategori_navn; //img-taggets alt sættes lig kategorinavnet
+                kategoriContainer.appendChild(kategoriKlon); //Alle de enkelte kategorier indsættes i kategori containeren
+            });
 
             document.querySelector(".breadcrumb_sti a:last-child").textContent = ringeInfo.title.rendered; //Vi erstatter linkets indhold med titlen på siden fra WP-backen
             document.querySelector(".breadcrumb_sti a:last-child").href = ringeInfo.slug + ".html"; //Vi sætter linkets href lig det rigtige dokument
