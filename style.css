@@ -1059,9 +1059,34 @@ footer .col:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     /*    padding-bottom: 40px;*/
 
 }
+
+#insta_gallery h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+#insta_gallery .socials_cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#insta_gallery .socials_cta a {
+    height: 70px;
+    width: 70px;
+    transition: transform .3s;
+}
+
+#insta_gallery .socials_cta a:hover {
+    transform: scale(1.04);
+}
+
 
 #insta_gallery #insta_grid_container {
     display: grid;
@@ -2066,6 +2091,10 @@ footer .col:last-child {
 
     #insta_gallery {
         height: 100vh;
+    }
+
+    #insta_gallery .socials_cta {
+        margin-bottom: 0;
     }
 
 
