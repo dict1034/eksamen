@@ -248,8 +248,25 @@
             if (window.scrollY < 1000) { //Hvis y-positionen er under 1000, så skjules to-top knappen
                 document.querySelector(".to_top").classList.remove("to_top_fade_in");
                 document.querySelector(".to_top").classList.add("to_top_fade_out");
+
+                document.querySelector(".to_top").classList.remove("to_top_fade_up");
+                document.querySelector(".to_top").classList.remove("to_top_fade_down");
             }
         }, 750);
+
+
+        window.onscroll = function() {
+            //hvis der er scrollet ned til bunden af siden, så skal ikonet løftes over footer
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 120) {
+                document.querySelector(".to_top").classList.add("to_top_fade_up");
+            } else { //Hvis der er scrollet op igen, så sættes den tilbage
+                document.querySelector(".to_top").classList.remove("to_top_fade_up");
+                document.querySelector(".to_top").style.bottom = "2vw";
+            }
+        }
+
     </script>
     <script src="burgermenu.js"></script>
-</body></html>
+</body>
+
+</html>

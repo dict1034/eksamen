@@ -454,6 +454,23 @@ footer .col:last-child {
     animation-fill-mode: forwards;
 }
 
+
+.to_top_fade_up {
+    animation-name: to_top_fade_up_kf;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.to_top_fade_down {
+    animation-name: to_top_fade_down_kf;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
 @keyframes to_top_fade_in_kf {
     0% {
         z-index: 2;
@@ -478,6 +495,27 @@ footer .col:last-child {
         opacity: 0%;
         display: none;
         z-index: -100;
+    }
+}
+
+
+@keyframes to_top_fade_up_kf {
+    0% {
+        bottom: 2vw;
+    }
+
+    100% {
+        bottom: 10vw;
+    }
+}
+
+@keyframes to_top_fade_down_kf {
+    0% {
+        bottom: 10vw;
+    }
+
+    100% {
+        bottom: 2vw;
     }
 }
 
