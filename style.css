@@ -1818,7 +1818,7 @@ footer .col:last-child {
     #landingpage #landingpage_info {
         flex-direction: row;
         justify-content: center;
-        height: 90vh;
+        height: 58vh;
     }
 
     #landingpage #landingpage_info .wp-block-columns {
@@ -1829,9 +1829,9 @@ footer .col:last-child {
     }
 
     #landingpage #landingpage_info .wp-block-column {
-        width: 50%;
+        width: 45%;
         padding: 20px;
-        max-width: 50%;
+        max-width: 45%;
     }
 
     #landingpage #landingpage_info .wp-block-column:first-child,
@@ -2328,10 +2328,6 @@ footer .col:last-child {
         bottom: 10%;
     }
 
-    #landingpage #landingpage_info .wp-block-columns {
-        margin: -20vw 3vw 0 3vw;
-    }
-
     #insta_gallery {
         padding: 0 2vw;
     }
@@ -2499,7 +2495,7 @@ footer .col:last-child {
     #landingpage #landingpage_info {
         flex-direction: row;
         justify-content: center;
-        height: 90vh;
+        height: 58vh;
     }
 
     #landingpage #landingpage_info .wp-block-columns {
