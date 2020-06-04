@@ -88,7 +88,7 @@ nav {}
 }
 
 #desktop_menu img {
-    width: 150px;
+    width: 140px;
     transform-origin: 50% 50%;
     margin-bottom: -85px;
 }
@@ -344,8 +344,8 @@ footer p {
 
 footer img {
     display: none;
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
 }
 
 footer .footer_info {
@@ -761,8 +761,9 @@ footer .col:last-child {
 
 
 #kontakt #kontakt_info .box_logo {
-    background-color: #7a645a;
-    background-image: url(billeder/hvidt_logo.svg);
+/*    background-color: #7a645a;*/
+    background-image: url(billeder/logo_1.svg);
+
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain;
