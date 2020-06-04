@@ -81,11 +81,12 @@ nav {}
 #desktop_menu {
     display: none;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    /*    width: 100vw;*/
     background-color: #fafafa;
 }
+
+
 
 #desktop_menu img {
     width: 140px;
@@ -96,19 +97,23 @@ nav {}
 #desktop_menu a {
     padding: 5px 0;
     transition: transform .3s;
+    margin-left: 7vw;
+
+}
+
+#desktop_menu a:last-child {
+    margin-right: 7vw;
 }
 
 #desktop_menu a:hover {
     transform: scale(1.04);
-    /*    font-weight: 700;*/
+    /*        font-weight: 700;*/
 }
 
 #desktop_menu a:nth-child(3):hover {
     transform: scale(1);
     /*    font-weight: 700;*/
 }
-
-
 
 
 
@@ -802,7 +807,7 @@ footer .col:last-child {
 
 #kontakt #kontakt_info .box_logo {
     /*    background-color: #7a645a;*/
-    background-image: url(billeder/logo_1.svg);
+    background-image: url(billeder/logo_transparant.svg);
 
     background-position: 50%;
     background-repeat: no-repeat;
@@ -989,10 +994,7 @@ footer .col:last-child {
     position: relative;
     z-index: -1;
     top: 0;
-    /*    width: 100vw;*/
-    height: 92vh;
-    /*    background-image: url(https://via.placeholder.com/1920x1080);*/
-    background-position: 45%;
+    height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -1002,7 +1004,7 @@ footer .col:last-child {
 
 #fornyelse #fornyelse_info {
     /*    width: 100vw;*/
-    padding: 40px 40px 80px 40px;
+    padding: 80px 40px 80px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1448,7 +1450,7 @@ footer .col:last-child {
     /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
-    background-position: 45%;
+    background-position-y: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
