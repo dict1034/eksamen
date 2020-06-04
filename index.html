@@ -207,8 +207,8 @@
 
             let content = landingpageInfo.content.rendered.split(`<hr class="wp-block-separator"/>`);
 
-
             document.querySelector("#landingpage_info").innerHTML += content[0]; //Vi indsætter første afsnit fra WP-backend ind i div'en med ID'et "landingpage_info"
+
 
             document.querySelector("#landingpage_bubbles").innerHTML += content[1]; //Vi indsætter næste afsnit fra WP-backend ind i div'en med ID'et "landingpage_bubbles"
 
@@ -218,17 +218,18 @@
             landingpageHeading.textContent += `${landingpageInfo.title.rendered}`; //Vi sætter h1-taggets indhold til at være overskriften fra smykke-siden gennem WP-backend
             landingpageHeadingContent.before(landingpageHeading); //Vi indsætter smykke overskriften før den første paragraph
 
-            //document.querySelectorAll("#landingpage_splash")[1].innerHTML += content[2];
 
 
 
 
 
 
-            let idk = content[2].match(/\bhttps?:\/\/\S+/gi); //Vi definerer en variabel, som indeholder URL'en til splashbilledet
-            let idk2 = idk[4].substring(0, idk[0].length - 1); //Vi fjerner det sidste gåseøjnetegn fra strengen
-            console.log(idk2); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
-            document.querySelectorAll("#landingpage_splash")[1].style.backgroundImage = `url(${idk2})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
+
+
+            let secondSplashImageURL = content[2].match(/\bhttps?:\/\/\S+/gi); //Vi definerer en variabel, som indeholder URL'en til splashbilledet
+            let secondSplashImageURLCut = secondSplashImageURL[4].substring(0, secondSplashImageURL[0].length - 1); //Vi fjerner det sidste gåseøjnetegn fra strengen
+            console.log(secondSplashImageURLCut); //Vi console-logger for at tjekke at vi får fat i den rigtige billede-URL
+            document.querySelectorAll("#landingpage_splash")[1].style.backgroundImage = `url(${secondSplashImageURLCut})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
 
 
 
@@ -254,6 +255,9 @@
                 console.log(instaKlon);
             });
         }
+
     </script>
     <script src="burgermenu.js"></script>
-</body></html>
+</body>
+
+</html>
