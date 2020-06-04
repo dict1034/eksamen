@@ -1260,7 +1260,7 @@ footer .col:last-child {
     /*    width: 100vw;*/
     height: 92vh;
     /*    background-image: url(https://via.placeholder.com/1920x1080);*/
-    background-position: 45%;
+    background-position-y: 65%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
