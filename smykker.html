@@ -205,6 +205,8 @@
                 kategoriKlon.querySelector("img").src = kategori.kategori_billede.guid; //img-taggets source sættes lig kategoribilledet
                 kategoriKlon.querySelector("img").alt = kategori.kategori_navn; //img-taggets alt sættes lig kategorinavnet
                 kategoriContainer.appendChild(kategoriKlon); //Alle de enkelte kategorier indsættes i kategori containeren
+
+
             });
 
             let smykkeContainer = document.querySelector("#alle_smykker"); //Vi definerer en container, der skal indeholde alle smykkerne
@@ -219,6 +221,8 @@
                 smykkeContainer.appendChild(smykkeklon); //Alle de enkelte smykker indsættes i kategori containeren
             });
 
+            //Underline på menupunkt
+            document.querySelector("#desktop_menu a").style.borderBottom = "2px solid #7a645a";
         }
 
 
@@ -234,9 +238,6 @@
                 document.querySelector(".to_top").classList.add("to_top_fade_out");
             }
         }, 750);
-
     </script>
     <script src="burgermenu.js"></script>
-</body>
-
-</html>
+</body></html>

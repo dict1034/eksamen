@@ -53,6 +53,9 @@ a {
     color: #000;
 }
 
+
+
+
 img {
     width: 100%;
 }
@@ -60,6 +63,7 @@ img {
 figure {
     margin: 0;
 }
+
 
 /************* GENERELLE INDSTILLINGER SLUT *************/
 
@@ -1767,11 +1771,13 @@ footer .col:last-child {
     #landingpage #landingpage_info .wp-block-column:first-child,
     #landingpage #landingpage_bubbles .wp-block-column:first-child {
         padding-right: 35px;
+
     }
 
     #landingpage #landingpage_info .wp-block-column:last-child,
     #landingpage #landingpage_bubbles .wp-block-column:last-child {
         padding-left: 35px;
+
     }
 
     #landingpage #landingpage_info .wp-block-column h1,
@@ -2245,6 +2251,10 @@ footer .col:last-child {
         position: absolute;
         right: 3%;
         bottom: 12%;
+    }
+
+    #landingpage #landingpage_info .wp-block-columns {
+        margin: -20vw 3vw 0 3vw;
     }
 
     #insta_gallery {

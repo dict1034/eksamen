@@ -151,13 +151,11 @@
             document.querySelector("#kontakt_splash").style.backgroundImage = `url(${splashImage})`; //Vi sætter splash-sektionens backgroundimage til at være lig URL'en fra WP-backend
 
 
-
-
             document.querySelector(".box_info").innerHTML += kontakt.content.rendered; //Vi indsætter alt indhold fra WP-backend ind i div'en med klassenavn "box_info"
-        }
 
+            //Underline på menupunkt
+            document.querySelector("#desktop_menu a:last-child").style.borderBottom = "2px solid #7a645a";
+        }
     </script>
     <script src="burgermenu.js"></script>
-</body>
-
-</html>
+</body></html>
