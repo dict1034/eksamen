@@ -67,7 +67,6 @@
 
 
 
-
         <section id="kategorier">
             <template id="kategori_template">
                 <article class="kategori_article">
@@ -115,9 +114,7 @@
         </div>
     </div>
 
-    <a href="smykker.html#top">
-        <div id="to_top" class="to_top_hide"></div>
-    </a>
+    <a href="smykker.html#top" class="to_top to_top_hide"></a>
 
 
     <footer>
@@ -164,19 +161,6 @@
         let smykkeInfo = [];
         let alleSmykker = [];
         let kategorier = [];
-
-        setInterval(function() {
-            if (window.scrollY > 1000) { //Hvis y-positionen er over 1000, så vises to-top knappen
-                document.querySelector("#to_top").classList.remove("to_top_hide");
-                document.querySelector("#to_top").classList.remove("to_top_fade_out");
-                document.querySelector("#to_top").classList.add("to_top_fade_in");
-            }
-
-            if (window.scrollY < 1000) { //Hvis y-positionen er under 1000, så skjules to-top knappen
-                document.querySelector("#to_top").classList.remove("to_top_fade_in");
-                document.querySelector("#to_top").classList.add("to_top_fade_out");
-            }
-        }, 750);
 
         //Vi starter funktionen "start" hvor vi kalder funktionen "loadData"
         function start() {
@@ -236,6 +220,20 @@
             });
 
         }
+
+
+        setInterval(function() { //Vi tjekker Y-scroll-positionen hvert 3/4 af et sekund
+            if (window.scrollY > 1000) { //Hvis y-positionen er over 1000, så vises to-top knappen
+                document.querySelector(".to_top").classList.remove("to_top_hide");
+                document.querySelector(".to_top").classList.remove("to_top_fade_out");
+                document.querySelector(".to_top").classList.add("to_top_fade_in");
+            }
+
+            if (window.scrollY < 1000) { //Hvis y-positionen er under 1000, så skjules to-top knappen
+                document.querySelector(".to_top").classList.remove("to_top_fade_in");
+                document.querySelector(".to_top").classList.add("to_top_fade_out");
+            }
+        }, 750);
 
     </script>
     <script src="burgermenu.js"></script>
